@@ -12,10 +12,21 @@ const isTips = (c: any) => c.tips;
   <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
     {practical.cards.map((card, i) => (
       <div class={`rounded-3xl bg-white border border-black/5 p-6 ${i === 3 ? 'bg-[color:var(--color-sun)]/20 border-[color:var(--color-sun)]/40' : ''}`}>
-        <div class="text-3xl">{card.icon}</div>
+        {card.icon && <div class="text-3xl">{card.icon}</div>}
         <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)] mt-4">{_(card.label)}</div>
         {card.value && <div class="font-display text-2xl mt-1">{_(card.value)}</div>}
-        {isTips(card) ? <ul class="mt-2 space-y-1.5 text-sm text-[color:var(--color-ink)]">{card.tips.map((tip: any, j: number) => <li>💧 {_(tip)}</li>)}</ul> : <p class="text-sm text-[color:var(--color-moss)]/80 mt-2">{_(card.desc)}</p>}
+        {isTips(card)
+          ? (
+            <div class="mt-4 space-y-2.5">
+              {card.tips.map((tip: any) => (
+                <div class="flex gap-3">
+                  <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[color:var(--color-emerald)] flex-shrink-0"></span>
+                  <div class="text-sm text-[color:var(--color-ink)]/90 leading-relaxed" set:html={_(tip)} />
+                </div>
+              ))}
+            </div>
+          )
+          : <p class="text-sm text-[color:var(--color-moss)]/80 mt-2">{_(card.desc)}</p>}
       </div>
     ))}
   </div>
