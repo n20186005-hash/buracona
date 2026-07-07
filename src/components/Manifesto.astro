@@ -1,0 +1,52 @@
+---
+import type { Lang } from '../i18n/utils';
+import { manifesto } from '../i18n/translations';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+---
+<section id="manifesto" class="manifesto-section max-w-7xl mx-auto px-6 py-24 md:py-32">
+  <div class="max-w-4xl mx-auto">
+    <!-- Section label -->
+    <div class="text-center mb-6">
+      <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)] mb-4">— {_(manifesto.sectionNum)} —</div>
+      <p class="text-sm text-[color:var(--color-moss)]/60 italic">{_(manifesto.subheading)}</p>
+    </div>
+
+    <!-- Main heading -->
+    <h2 class="font-display text-4xl md:text-6xl lg:text-7xl text-center leading-tight mb-16" set:html={_(manifesto.heading)} />
+
+    <!-- Body text -->
+    <div class="space-y-8 text-lg leading-[1.85] text-[color:var(--color-moss)]">
+      <p class="drop-cap" set:html={_(manifesto.p1)} />
+      <p set:html={_(manifesto.p2)} />
+      <p set:html={_(manifesto.p3)} />
+    </div>
+
+    <!-- Closing statement -->
+    <blockquote class="mt-14 py-8 px-6 md:px-12 border-l-4 border-[color:var(--color-emerald)] bg-white/60 rounded-r-2xl">
+      <p class="font-display text-xl md:text-2xl leading-relaxed text-[color:var(--color-ink)]" set:html={_(manifesto.closing)} />
+    </blockquote>
+
+    <!-- Chips -->
+    <div class="mt-12 flex flex-wrap justify-center gap-3">
+      <span class="chip text-sm px-5 py-2.5 rounded-full bg-white border border-black/10">🌿 {_(manifesto.chip1)}</span>
+      <span class="chip text-sm px-5 py-2.5 rounded-full bg-white border border-black/10">💦 {_(manifesto.chip2)}</span>
+      <span class="chip text-sm px-5 py-2.5 rounded-full bg-white border border-black/10">🌳 {_(manifesto.chip3)}</span>
+      <span class="chip text-sm px-5 py-2.5 rounded-full bg-white border border-black/10">📖 {_(manifesto.chip4)}</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .drop-cap::first-letter {
+    float: left;
+    font-family: 'Fraunces', serif;
+    font-size: 4.5rem;
+    line-height: 0.8;
+    padding-right: 0.5rem;
+    padding-top: 0.15rem;
+    color: var(--color-emerald);
+    font-weight: 800;
+  }
+</style>

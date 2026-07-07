@@ -1,0 +1,32 @@
+---
+import '../styles/global.css';
+import type { Lang } from '../i18n/utils';
+import { LANG_LABELS, LANGUAGES } from '../i18n/utils';
+
+interface Props { lang: Lang; title: string; description: string; }
+const { lang, title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const alternates = LANGUAGES.map((l) => {
+  const path = Astro.url.pathname.replace(`/${lang}`, `/${l}`);
+  return { lang: l, href: new URL(path, Astro.site).href };
+});
+---
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : lang === 'pt' ? 'pt_CV' : lang === 'cri' ? 'kea_CV' : 'en_US'} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+</head>
+<body><slot /></body>
+</html>

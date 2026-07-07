@@ -1,0 +1,22 @@
+---
+import type { Lang } from '../i18n/utils';
+import { surrounding } from '../i18n/translations';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+---
+<section class="bg-[color:var(--color-mist)] py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">08 — {_(surrounding.sectionNum)}</div>
+    <h2 class="font-display text-4xl md:text-6xl mt-4 mb-14 max-w-3xl" set:html={_(surrounding.heading)} />
+    <div class="grid md:grid-cols-3 gap-5">
+      {surrounding.items.map((card) => (
+        <article class="rounded-3xl bg-white overflow-hidden card-hover">
+          <div class="aspect-[4/3] bg-cover bg-center" style={`background-image:url('${card.img}')`}></div>
+          <div class="p-6"><h3 class="font-display text-2xl">{card.title}</h3>
+          <p class="mt-2 text-[color:var(--color-moss)] text-sm leading-relaxed">{_(card.desc)}</p></div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

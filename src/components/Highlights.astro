@@ -1,0 +1,25 @@
+---
+import type { Lang } from '../i18n/utils';
+import { highlights } from '../i18n/translations';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+---
+<section id="highlights" class="bg-[color:var(--color-moss)] text-white py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-end justify-between flex-wrap gap-6 mb-14">
+      <div><div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-sun)]">02 — {_(highlights.sectionNum)}</div>
+      <h2 class="font-display text-4xl md:text-6xl mt-4" set:html={_(highlights.heading)} /></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      {highlights.items.map((item, i) => (
+        <article class={`card-hover rounded-3xl overflow-hidden bg-white/5 border border-white/10 ${i === 1 ? 'md:translate-y-6' : ''}`}>
+          <div class="aspect-[4/3] bg-cover bg-center" style={`background-image:url('${item.img}')`}></div>
+          <div class="p-7"><div class="text-[color:var(--color-sun)] text-sm font-medium">{item.icon} {item.num}</div>
+          <h3 class="font-display text-2xl mt-2">{_(item.title)}</h3>
+          <p class="mt-3 text-white/75 leading-relaxed">{_(item.desc)}</p></div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

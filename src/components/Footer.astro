@@ -1,0 +1,61 @@
+---
+import type { Lang } from '../i18n/utils';
+import { footer, partners } from '../i18n/translations';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+---
+<footer class="bg-[color:var(--color-ink)] text-[color:var(--color-cream)]">
+  <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-6">
+      <h2 class="font-display text-4xl md:text-5xl leading-tight" set:html={_(footer.cta)} />
+      <p class="mt-6 text-white/70 max-w-md">{_(footer.address)}</p>
+    </div>
+    <div class="md:col-span-3">
+      <div class="text-xs uppercase tracking-widest text-[color:var(--color-sun)] mb-4">Location</div>
+      <div class="space-y-1 text-white/80">
+        <div>Plus Code · Q2X5+C3</div><div>Palmeira — Sal</div><div>Cabo Verde</div>
+        <div class="mt-4"><a href="https://maps.app.goo.gl/SexiAKH5DFxKRNf79" target="_blank" rel="noopener" class="link-underline text-[color:var(--color-sun)]">Google Maps →</a></div>
+      </div>
+    </div>
+    <div class="md:col-span-3">
+      <div class="text-xs uppercase tracking-widest text-[color:var(--color-sun)] mb-4">Rating</div>
+      <div class="num-display text-5xl">4.3</div>
+      <div class="text-white/60 text-sm">4,750 reviews</div>
+    </div>
+  </div>
+  <!-- Disclaimer + Legal Links -->
+  <div class="max-w-7xl mx-auto px-6 pb-10">
+    <p class="text-white/50 text-sm leading-relaxed max-w-3xl">⚠️ {_(footer.disclaimer)}</p>
+    <div class="flex flex-wrap gap-x-6 gap-y-2 mt-4 text-sm text-white/60">
+      <a href={`/${lang}/privacy`} class="link-underline">{_(footer.privacy)}</a>
+      <a href={`/${lang}/terms`} class="link-underline">{_(footer.terms)}</a>
+      <a href={`/${lang}/cookies`} class="link-underline">{_(footer.cookies)}</a>
+      <a href={`/${lang}/#leave-no-trace`} class="link-underline">{_(footer.leaveNoTrace)}</a>
+    </div>
+  </div>
+  <!-- Partners -->
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+      <h3 class="text-xs uppercase tracking-widest text-[color:var(--color-sun)] mb-8 text-center">{_(partners.heading)}</h3>
+      <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-6">
+        {partners.items.map((p) => (
+          <a
+            href={p.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={_(p.attr)}
+            class="partner-link group relative flex flex-col items-center gap-2 px-4 py-3 rounded-lg transition-colors duration-300 hover:bg-white/5"
+          >
+            <span class="partner-abbr font-display text-2xl text-white/30 group-hover:text-[color:var(--color-sun)] transition-colors duration-300 tracking-widest">{p.abbr}</span>
+            <span class="partner-note text-[10px] text-white/50 mt-1 text-center max-w-[11rem] leading-snug">{_(p.note)}</span>
+            <span class="partner-name text-[10px] text-white/0 group-hover:text-white/70 transition-all duration-300 whitespace-nowrap absolute -bottom-1 translate-y-full">{_(p.name)}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-6 text-center text-xs text-white/40">
+    {_(footer.copyright)}
+  </div>
+</footer>

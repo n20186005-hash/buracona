@@ -1,0 +1,31 @@
+---
+import type { Lang } from '../i18n/utils';
+import { transport } from '../i18n/translations';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+---
+<section class="bg-[color:var(--color-mist)] py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-12 gap-12 items-start">
+      <div class="md:col-span-4">
+        <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">04 — {_(transport.sectionNum)}</div>
+        <h2 class="font-display text-4xl md:text-5xl mt-4 leading-tight" set:html={_(transport.heading)} />
+        <p class="mt-6 text-[color:var(--color-moss)]/80">{_(transport.subtitle)}</p>
+      </div>
+      <div class="md:col-span-8 space-y-4">
+        {transport.items.map((item) => (
+          <div class="rounded-3xl bg-white p-7 border border-black/5">
+            <div class="flex items-start gap-5">
+              <div class="text-4xl">{item.icon}</div>
+              <div class="flex-1">
+                <div class="flex justify-between items-baseline gap-4 flex-wrap"><h3 class="font-display text-2xl">{_(item.title)}</h3><span class="text-[color:var(--color-emerald)] font-medium">{item.meta}</span></div>
+                {item.details.length === 1 ? <p class="mt-4 text-[color:var(--color-moss)]" set:html={_(item.details[0].text)} /> : <ul class="mt-4 space-y-2 text-[color:var(--color-moss)]">{item.details.map((d: any) => <li>{d.icon ? d.icon + ' ' : ''}<span set:html={_(d.text)} /></li>)}</ul>}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

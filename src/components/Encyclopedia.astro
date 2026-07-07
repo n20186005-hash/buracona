@@ -1,0 +1,40 @@
+---
+import type { Lang } from '../i18n/utils';
+import { encyclopedia } from '../i18n/translations';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+---
+<section id="encyclopedia" class="max-w-7xl mx-auto px-6 py-24 md:py-32">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">05 — {_(encyclopedia.sectionNum)}</div>
+    <h2 class="font-display text-4xl md:text-6xl mt-4 mb-6" set:html={_(encyclopedia.heading)} />
+    <p class="text-lg text-[color:var(--color-moss)]/70 max-w-2xl">{_(encyclopedia.subtitle)}</p>
+  </div>
+
+  <div class="mt-16 space-y-24 md:space-y-32">
+    {encyclopedia.items.map((item, i) => (
+      <article class="grid md:grid-cols-12 gap-8 md:gap-16 items-center">
+        <!-- Image side: alternates left/right -->
+        <div class={`md:col-span-5 ${i % 2 === 1 ? 'md:order-2' : ''}`}>
+          <div class="rounded-3xl overflow-hidden shadow-2xl">
+            <img src={item.img} alt={_(item.title)} class="w-full h-80 md:h-96 object-cover" loading="lazy" />
+          </div>
+        </div>
+        <!-- Text side -->
+        <div class={`md:col-span-7 ${i % 2 === 1 ? 'md:order-1' : ''}`}>
+          <div class="text-4xl md:text-5xl mb-4">{item.icon}</div>
+          <h3 class="font-display text-2xl md:text-3xl text-[color:var(--color-ink)]">{_(item.title)}</h3>
+          <div class="mt-5 text-[color:var(--color-moss)] leading-[1.85] space-y-3" set:html={_(item.body)} />
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  article p strong {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+</style>

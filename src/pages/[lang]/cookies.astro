@@ -1,0 +1,87 @@
+---
+import '../../../src/styles/global.css';
+import { LANGUAGES, type Lang } from '../../i18n/utils';
+import { cookies, footer } from '../../i18n/translations';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+export function getStaticPaths() {
+  return LANGUAGES.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+---
+<BaseLayout lang={lang} title={_(cookies.title)} description={_(cookies.title)}>
+  <Nav lang={lang} />
+  <main class="max-w-3xl mx-auto px-6 pt-24 pb-16">
+    <h1 class="font-display text-4xl md:text-5xl mt-10 mb-4">{_(cookies.h1)}</h1>
+    <p class="text-sm text-[color:var(--color-moss)]/60 mb-10">{_(cookies.lastUpdated)}</p>
+
+    <p class="text-[color:var(--color-moss)] mb-10 leading-relaxed">{_(cookies.intro)}</p>
+
+    <!-- Necessary Cookies -->
+    <section class="mb-10">
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="font-display text-xl text-[color:var(--color-ink)]">{_(cookies.cat_necessary)}</h2>
+        <span class="text-xs font-medium px-3 py-1 rounded-full bg-[color:var(--color-emerald)]/10 text-[color:var(--color-emerald)]">{_(cookies.alwaysActive)}</span>
+      </div>
+      <p class="text-sm text-[color:var(--color-moss)]/70">{_(cookies.cat_necessary_desc)}</p>
+    </section>
+
+    <!-- Analytics Cookies -->
+    <section class="mb-10 p-6 bg-[color:var(--color-cream)] rounded-2xl border border-black/5">
+      <h2 class="font-display text-xl text-[color:var(--color-ink)] mb-1">{_(cookies.cat_analytics)}</h2>
+      <p class="text-sm text-[color:var(--color-moss)]/70 mb-4">{_(cookies.cat_analytics_desc)}</p>
+      <div class="flex items-center justify-between py-3 border-t border-black/10">
+        <div>
+          <div class="font-medium text-[color:var(--color-ink)]">{cookies.ga_label}</div>
+          <div class="text-sm text-[color:var(--color-moss)]/60">{_(cookies.ga_desc)}</div>
+        </div>
+        <span class="text-xs font-medium px-3 py-1 rounded-full bg-[color:var(--color-emerald)]/10 text-[color:var(--color-emerald)]">{_(cookies.activated)}</span>
+      </div>
+    </section>
+
+    <!-- Preference Cookies -->
+    <section class="mb-10 p-6 bg-[color:var(--color-cream)] rounded-2xl border border-black/5">
+      <h2 class="font-display text-xl text-[color:var(--color-ink)] mb-1">{_(cookies.cat_preference)}</h2>
+      <p class="text-sm text-[color:var(--color-moss)]/70 mb-4">{_(cookies.cat_preference_desc)}</p>
+      <div class="flex items-center justify-between py-3 border-t border-black/10">
+        <div>
+          <div class="font-medium text-[color:var(--color-ink)]">{_(cookies.pref_label)}</div>
+          <div class="text-sm text-[color:var(--color-moss)]/60">{_(cookies.pref_desc)}</div>
+        </div>
+        <span class="text-xs font-medium px-3 py-1 rounded-full bg-[color:var(--color-emerald)]/10 text-[color:var(--color-emerald)]">{_(cookies.activated)}</span>
+      </div>
+    </section>
+
+    <!-- Marketing Cookies -->
+    <section class="mb-10 p-6 bg-[color:var(--color-cream)] rounded-2xl border border-black/5">
+      <h2 class="font-display text-xl text-[color:var(--color-ink)] mb-1">{_(cookies.cat_marketing)}</h2>
+      <p class="text-sm text-[color:var(--color-moss)]/70 mb-4">{_(cookies.cat_marketing_desc)}</p>
+      <div class="flex items-center justify-between py-3 border-t border-black/10">
+        <div>
+          <div class="font-medium text-[color:var(--color-ink)]">{_(cookies.ads_label)}</div>
+          <div class="text-sm text-[color:var(--color-moss)]/60">{_(cookies.ads_desc)}</div>
+        </div>
+        <span class="text-xs font-medium px-3 py-1 rounded-full bg-[color:var(--color-ink)]/10 text-[color:var(--color-ink)]/60">{_(cookies.deactivated)}</span>
+      </div>
+    </section>
+
+    <!-- Consent Management -->
+    <section class="p-6 bg-[color:var(--color-ink)] text-white rounded-2xl">
+      <h2 class="font-display text-xl mb-2">{_(cookies.consent_title)}</h2>
+      <p class="text-white/60 text-sm mb-6">{_(cookies.consent_desc)}</p>
+      <div class="flex gap-3">
+        <button class="px-6 py-3 bg-[color:var(--color-sun)] text-[color:var(--color-ink)] font-semibold rounded-full text-sm hover:opacity-90 transition">{_(cookies.savePrefs)}</button>
+        <button class="px-6 py-3 border border-white/30 text-white/80 rounded-full text-sm hover:bg-white/10 transition">{_(cookies.rejectAll)}</button>
+      </div>
+    </section>
+
+    <div class="mt-16 pt-8 border-t border-black/10">
+      <a href={`/${lang}/`} class="link-underline text-[color:var(--color-emerald)]">{_(cookies.backLink)}</a>
+    </div>
+  </main>
+  <Footer lang={lang} />
+</BaseLayout>

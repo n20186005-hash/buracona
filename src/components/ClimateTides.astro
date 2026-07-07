@@ -1,0 +1,74 @@
+---
+import type { Lang } from '../i18n/utils';
+import { climate } from '../i18n/translations';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+const LAT = 16.7519, LNG = -22.9375, TZ = 'Atlantic/Cape_Verde';
+const labels = {
+  rising: _(climate.rising), falling: _(climate.falling),
+  nextHigh: _(climate.nextHigh), nextLow: _(climate.nextLow),
+  loading: _(climate.loading), error: _(climate.error),
+};
+---
+<section class="bg-[color:var(--color-mist)] py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">{_(climate.sectionNum)}</div>
+      <h2 class="font-display text-4xl md:text-6xl mt-4" set:html={_(climate.heading)} />
+      <p class="mt-6 text-[color:var(--color-moss)]/80">{_(climate.subtitle)}</p>
+    </div>
+    <div class="mt-14 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div class="rounded-3xl bg-white p-8 border border-black/5 text-center">
+        <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{_(climate.sunsetLabel)}</div>
+        <div class="num-display text-5xl mt-3" id="ct-sun">—</div>
+      </div>
+      <div class="rounded-3xl bg-white p-8 border border-black/5 text-center">
+        <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{_(climate.tideLabel)}</div>
+        <div class="num-display text-5xl mt-3" id="ct-tide">—</div>
+        <div class="text-sm text-[color:var(--color-moss)]/70 mt-2" id="ct-tide-sub">—</div>
+      </div>
+    </div>
+    <div class="mt-6 text-center text-xs text-[color:var(--color-moss)]/50">{_(climate.source)}</div>
+  </div>
+</section>
+
+<script define:vars={{ LAT, LNG, TZ, labels }}>
+  (async () => {
+    const sunEl = document.getElementById('ct-sun');
+    const tideEl = document.getElementById('ct-tide');
+    const subEl = document.getElementById('ct-tide-sub');
+    const fmt = (iso) => new Date(iso).toLocaleTimeString('zh-CN', { timeZone: TZ, hour: '2-digit', minute: '2-digit' });
+    try {
+      const [sunRes, tideRes] = await Promise.all([
+        fetch(`https://api.sunrise-sunset.org/json?lat=${LAT}&lng=${LNG}&formatted=0`),
+        fetch(`https://marine-api.open-meteo.com/v1/marine?latitude=${LAT}&longitude=${LNG}&hourly=sea_level_height_msl&timezone=${encodeURIComponent(TZ)}`),
+      ]);
+      const sun = await sunRes.json();
+      const tide = await tideRes.json();
+      const sunset = new Date(sun.results.sunset).toLocaleTimeString('zh-CN', { timeZone: TZ, hour: '2-digit', minute: '2-digit' });
+      const times = tide.hourly.time, vals = tide.hourly.sea_level_height_msl;
+      const now = Date.now();
+      let idx = 0, best = Infinity;
+      for (let i = 0; i < times.length; i++) {
+        const d = Math.abs(new Date(times[i]).getTime() - now);
+        if (d < best) { best = d; idx = i; }
+      }
+      const cur = vals[idx];
+      const rising = vals[idx + 1] > cur;
+      let hi = null, lo = null;
+      for (let i = Math.max(1, idx); i < times.length - 1; i++) {
+        if (hi === null && vals[i] >= vals[i - 1] && vals[i] > vals[i + 1]) hi = fmt(times[i]);
+        if (lo === null && vals[i] <= vals[i - 1] && vals[i] < vals[i + 1]) lo = fmt(times[i]);
+        if (hi !== null && lo !== null) break;
+      }
+      sunEl.textContent = sunset;
+      tideEl.textContent = cur.toFixed(2) + ' m';
+      subEl.textContent = `${rising ? labels.rising : labels.falling} · ${labels.nextHigh} ${hi || '—'} · ${labels.nextLow} ${lo || '—'}`;
+    } catch (e) {
+      sunEl.textContent = labels.error;
+      tideEl.textContent = '';
+      subEl.textContent = '';
+    }
+  })();
+</script>

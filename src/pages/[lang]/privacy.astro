@@ -1,0 +1,46 @@
+---
+import '../../../src/styles/global.css';
+import { LANGUAGES, type Lang } from '../../i18n/utils';
+import { privacy, footer } from '../../i18n/translations';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+export function getStaticPaths() {
+  return LANGUAGES.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+---
+<BaseLayout lang={lang} title={_(privacy.title)} description={_(privacy.title)}>
+  <Nav lang={lang} />
+  <main class="max-w-3xl mx-auto px-6 pt-24 pb-16">
+    <h1 class="font-display text-4xl md:text-5xl mt-10 mb-4">{_(privacy.h1)}</h1>
+    <p class="text-sm text-[color:var(--color-moss)]/60 mb-10">{_(privacy.lastUpdated)}</p>
+
+    <section class="space-y-10 text-[color:var(--color-moss)] leading-relaxed">
+      <div>
+        <h2 class="font-display text-2xl text-[color:var(--color-ink)] mb-3">{_(privacy.h2_collect)}</h2>
+        <p>{_(privacy.p_collect)}</p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl text-[color:var(--color-ink)] mb-3">{_(privacy.h2_use)}</h2>
+        <p>{_(privacy.p_use)}</p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl text-[color:var(--color-ink)] mb-3">{_(privacy.h2_third)}</h2>
+        <p>{_(privacy.p_third)}</p>
+      </div>
+      <div>
+        <h2 class="font-display text-2xl text-[color:var(--color-ink)] mb-3">{_(privacy.h2_rights)}</h2>
+        <p>{_(privacy.p_rights)}</p>
+      </div>
+    </section>
+
+    <div class="mt-16 pt-8 border-t border-black/10">
+      <a href={`/${lang}/`} class="link-underline text-[color:var(--color-emerald)]">← {_(footer.privacy)} — {lang === 'zh' ? '返回首页' : lang === 'pt' ? 'Voltar ao início' : lang === 'cri' ? 'Voltar ao início' : 'Back to home'}</a>
+    </div>
+  </main>
+  <Footer lang={lang} />
+</BaseLayout>

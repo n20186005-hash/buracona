@@ -1,0 +1,51 @@
+---
+import '../../../src/styles/global.css';
+import { LANGUAGES, type Lang } from '../../i18n/utils';
+import { meta } from '../../i18n/translations';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Hero from '../../components/Hero.astro';
+import Marquee from '../../components/Marquee.astro';
+import Manifesto from '../../components/Manifesto.astro';
+import Highlights from '../../components/Highlights.astro';
+import PracticalInfo from '../../components/PracticalInfo.astro';
+import ClimateTides from '../../components/ClimateTides.astro';
+import Transport from '../../components/Transport.astro';
+import Encyclopedia from '../../components/Encyclopedia.astro';
+import Ecology from '../../components/Ecology.astro';
+import Gallery from '../../components/Gallery.astro';
+import Reviews from '../../components/Reviews.astro';
+import Surrounding from '../../components/Surrounding.astro';
+import Faq from '../../components/Faq.astro';
+import LeaveNoTrace from '../../components/LeaveNoTrace.astro';
+import Footer from '../../components/Footer.astro';
+import StructuredData from '../../components/StructuredData.astro';
+
+export function getStaticPaths() {
+  return LANGUAGES.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+const title = _(meta.title);
+const desc = _(meta.description);
+---
+<BaseLayout lang={lang} title={title} description={desc}>
+  <Nav lang={lang} />
+  <Hero lang={lang} />
+  <Marquee />
+  <Manifesto lang={lang} />
+  <Highlights lang={lang} />
+  <PracticalInfo lang={lang} />
+  <ClimateTides lang={lang} />
+  <Transport lang={lang} />
+  <Encyclopedia lang={lang} />
+  <Ecology lang={lang} />
+  <Gallery lang={lang} />
+  <Reviews lang={lang} />
+  <Surrounding lang={lang} />
+  <LeaveNoTrace lang={lang} />
+  <Faq lang={lang} />
+  <Footer lang={lang} />
+  <StructuredData lang={lang} />
+</BaseLayout>

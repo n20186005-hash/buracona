@@ -1,0 +1,26 @@
+---
+import type { Lang } from '../i18n/utils';
+import { overview } from '../i18n/translations';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+---
+<section id="overview" class="max-w-7xl mx-auto px-6 py-24 md:py-32">
+  <div class="grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-4"><div class="sticky top-24">
+      <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">01 — {_(overview.sectionNum)}</div>
+      <h2 class="font-display text-4xl md:text-5xl mt-4 leading-tight" set:html={_(overview.heading)} />
+    </div></div>
+    <div class="md:col-span-8 space-y-6 text-lg leading-relaxed text-[color:var(--color-moss)]">
+      <p set:html={_(overview.p1)} />
+      <p set:html={_(overview.p2)} />
+      <p set:html={_(overview.p3)} />
+      <div class="mt-10 flex flex-wrap gap-3">
+        <span class="chip text-sm px-4 py-2 rounded-full bg-white">🌿 {_(overview.chip1)}</span>
+        <span class="chip text-sm px-4 py-2 rounded-full bg-white">💦 {_(overview.chip2)}</span>
+        <span class="chip text-sm px-4 py-2 rounded-full bg-white">🦋 {_(overview.chip3)}</span>
+        <span class="chip text-sm px-4 py-2 rounded-full bg-white">🌈 {_(overview.chip4)}</span>
+      </div>
+    </div>
+  </div>
+</section>

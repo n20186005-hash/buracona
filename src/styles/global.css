@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --color-ink: #0B1F1A;
+  --color-moss: #1F3B34;
+  --color-emerald: #2F6B4E;
+  --color-sun: #E8B14B;
+  --color-mist: #EDF3EF;
+  --color-cream: #F7F3EA;
+}
+
+body { font-family: var(--font-body); background-color: var(--color-cream); color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+.font-display { font-family: var(--font-display); font-optical-sizing: auto; }
+.hero-bg { background-size: cover; background-position: center; }
+.rain::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(105deg, rgba(255,255,255,.08) 0 1px, transparent 1px 6px); mix-blend-mode: overlay; }
+.grain { background-image: radial-gradient(rgba(11,31,26,.06) 1px, transparent 1px); background-size: 3px 3px; }
+.chip { border: 1px solid rgba(31,59,52,.25); backdrop-filter: blur(6px); }
+.link-underline { background-image: linear-gradient(currentColor, currentColor); background-size: 0 1px; background-repeat: no-repeat; background-position: 0 100%; transition: background-size .3s; }
+.link-underline:hover { background-size: 100% 1px; }
+@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee { display: flex; gap: 3rem; animation: scroll 40s linear infinite; }
+.card-hover { transition: transform .4s ease, box-shadow .4s ease; }
+.card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -20px rgba(11,31,26,.25); }
+details[open] .faq-plus { transform: rotate(45deg); }
+.faq-plus { transition: transform .25s; }
+.lang-btn.active { background: var(--color-ink); color: var(--color-cream); }
+.num-display { font-family: var(--font-display); font-weight: 600; letter-spacing: -.02em; }
+/* Partner links */
+.partner-abbr { font-variant: small-caps; letter-spacing: 0.15em; }
+.partner-link:hover .partner-name { opacity: 1; transform: translateY(4px); }

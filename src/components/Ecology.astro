@@ -1,0 +1,143 @@
+---
+import type { Lang } from '../i18n/utils';
+import { ecology } from '../i18n/translations';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+
+const iucnColors: Record<string, string> = {
+  EN: 'bg-red-700/90 text-white',
+  VU: 'bg-amber-600/90 text-white',
+  NT: 'bg-yellow-500/90 text-[color:var(--color-ink)]',
+  LC: 'bg-emerald-600/90 text-white',
+};
+
+const iucnLabels: Record<string, keyof typeof ecology> = {
+  EN: 'iucnEN' as any,
+  VU: 'iucnVU' as any,
+  NT: 'iucnNT' as any,
+  LC: 'iucnLC' as any,
+};
+
+// Group species into sections
+const umbrellaSpecies = ecology.species.slice(0, 2);
+const commensalSpecies = ecology.species.slice(2, 5);
+const floraSpecies = ecology.species.slice(5);
+---
+
+<section id="ecology" class="max-w-7xl mx-auto px-6 py-24 md:py-32">
+  <!-- Section header -->
+  <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)] text-center">
+    06 — {_(ecology.sectionNum)}
+  </div>
+  <h2 class="font-display text-4xl md:text-6xl mt-4 text-center mb-8" set:html={_(ecology.heading)} />
+
+  <!-- Intro paragraph -->
+  <div class="max-w-4xl mx-auto mb-20">
+    <p class="text-lg leading-relaxed text-[color:var(--color-moss)] text-center">
+      {_(ecology.intro)}
+    </p>
+  </div>
+
+  <!-- Section 1: Umbrella Species -->
+  <div class="mb-20">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-[color:var(--color-emerald)]"></span>
+      <h3 class="font-display text-2xl md:text-3xl text-[color:var(--color-moss)]">
+        🐾 {_(ecology.secUmbrella)}
+      </h3>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      {umbrellaSpecies.map((sp) => (
+        <div class="group rounded-2xl border border-black/10 bg-white overflow-hidden card-hover">
+          <div class="p-6 md:p-8">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <span class="text-3xl mr-3">{sp.icon}</span>
+                <h4 class="font-display text-xl md:text-2xl inline">{_(sp.name)}</h4>
+              </div>
+            </div>
+            <p class="text-xs italic text-[color:var(--color-emerald)] mb-1">{sp.latin}</p>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-[color:var(--color-mist)] text-[color:var(--color-moss)] border border-black/10">
+                {_(sp.niche)}
+              </span>
+              <span class={`text-[10px] px-2 py-0.5 rounded-full font-semibold tracking-wide ${iucnColors[sp.iucn]}`}>
+                IUCN: {_(ecology[iucnLabels[sp.iucn] as keyof typeof ecology] as any)}
+              </span>
+            </div>
+            <p class="text-sm leading-relaxed text-[color:var(--color-moss)]" set:html={_(sp.desc)} />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Section 2: Commensal Species -->
+  <div class="mb-20">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-[color:var(--color-emerald)]"></span>
+      <h3 class="font-display text-2xl md:text-3xl text-[color:var(--color-moss)]">
+        🦋 {_(ecology.secCommensal)}
+      </h3>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      {commensalSpecies.map((sp) => (
+        <div class="group rounded-2xl border border-black/10 bg-white overflow-hidden card-hover">
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <span class="text-3xl mr-2">{sp.icon}</span>
+                <h4 class="font-display text-lg inline">{_(sp.name)}</h4>
+              </div>
+            </div>
+            <p class="text-[11px] italic text-[color:var(--color-emerald)] mb-1">{sp.latin}</p>
+            <div class="flex items-center gap-2 mb-3 flex-wrap">
+              <span class="text-[11px] px-2 py-0.5 rounded-full bg-[color:var(--color-mist)] text-[color:var(--color-moss)] border border-black/10">
+                {_(sp.niche)}
+              </span>
+              <span class={`text-[10px] px-2 py-0.5 rounded-full font-semibold tracking-wide ${iucnColors[sp.iucn]}`}>
+                IUCN: {_(ecology[iucnLabels[sp.iucn] as keyof typeof ecology] as any)}
+              </span>
+            </div>
+            <p class="text-sm leading-relaxed text-[color:var(--color-moss)]" set:html={_(sp.desc)} />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Section 3: Endemic Flora -->
+  <div>
+    <div class="flex items-center gap-3 mb-8">
+      <span class="w-8 h-px bg-[color:var(--color-emerald)]"></span>
+      <h3 class="font-display text-2xl md:text-3xl text-[color:var(--color-moss)]">
+        🌿 {_(ecology.secFlora)}
+      </h3>
+    </div>
+    <div class="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
+      {floraSpecies.map((sp) => (
+        <div class="group rounded-2xl border border-black/10 bg-white overflow-hidden card-hover">
+          <div class="p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
+            <div class="flex-shrink-0 w-16 h-16 rounded-xl bg-[color:var(--color-mist)] flex items-center justify-center text-3xl">
+              {sp.icon}
+            </div>
+            <div class="flex-1">
+              <div class="flex items-start justify-between mb-2 flex-wrap gap-2">
+                <h4 class="font-display text-xl md:text-2xl">{_(sp.name)}</h4>
+                <span class={`text-[10px] px-2.5 py-1 rounded-full font-semibold tracking-wide ${iucnColors[sp.iucn]}`}>
+                  IUCN: {_(ecology[iucnLabels[sp.iucn] as keyof typeof ecology] as any)}
+                </span>
+              </div>
+              <p class="text-xs italic text-[color:var(--color-emerald)] mb-2">{sp.latin}</p>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-[color:var(--color-mist)] text-[color:var(--color-moss)] border border-black/10 inline-block mb-3">
+                {_(sp.niche)}
+              </span>
+              <p class="text-sm leading-relaxed text-[color:var(--color-moss)]" set:html={_(sp.desc)} />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
