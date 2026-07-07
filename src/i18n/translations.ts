@@ -16,19 +16,25 @@ export const nav = {
   ecology: { zh: `生态`, en: `Ecology`, pt: `Ecologia` } as T,
   gallery: { zh: `图集`, en: `Gallery`, pt: `Galeria` } as T,
   faq: { zh: `问答`, en: `FAQ`, pt: `Perguntas` } as T,
+  support: { zh: `支持我们`, en: `Support Us`, pt: `Apoie-nos` } as T,
 };
+
+export const viewMode = {
+  tourist: { zh: `游客模式`, en: `Traveler`, pt: `Turista` } as T,
+  science: { zh: `科普模式`, en: `Field Notes`, pt: `Ciência` } as T,
+} as const;
 
 // ── Hero ──
 export const hero = {
   title: {
-    zh: `佛得角的<br/><span class="italic text-[color:var(--color-sun)]">蓝眼之洞</span>`,
+    zh: `佛得角的<br/><span class="italic text-[color:var(--color-sun)]">蓝眼岩洞</span>`,
     en: `Cape Verde's<br/><span class="italic text-[color:var(--color-sun)]">Blue Eye</span>`,
     pt: `O <span class="italic text-[color:var(--color-sun)]">Olho Azul</span><br/>de Cabo Verde`,
   } as T,
   subtitle: {
-    zh: `Buracona · 萨尔岛帕尔梅拉附近的火山岩蓝洞 —— 阳光穿过海水，在洞底折射出深邃的蓝光，是佛得角最神秘的自然奇景之一。`,
-    en: `Buracona · A volcanic blue hole near Palmeira, Sal — where sunlight pierces the seawater and refracts into a deep blue glow at the bottom of the cave, one of Cape Verde's most surreal natural wonders.`,
-    pt: `Buracona · Um olho de água vulcânico perto de Palmeira, Sal — onde a luz do sol atravessa a água do mar e se refrata num azul profundo no fundo da gruta, uma das maravilhas naturais mais surreais de Cabo Verde.`,
+    zh: `Buracona · 萨尔岛帕尔梅拉附近的玄武岩裂隙蓝眼岩洞 —— 阳光穿过海水，在洞底折射出深邃的蓝光，是佛得角最神秘的自然奇景之一。`,
+    en: `Buracona · A basalt sea cave and tide pool near Palmeira, Sal — where sunlight pierces the seawater and refracts into a deep blue glow at the bottom of the cave, one of Cape Verde's most surreal natural wonders.`,
+    pt: `Buracona · Uma gruta marinha e poça de maré em basalto perto de Palmeira, Sal — onde a luz do sol atravessa a água do mar e se refrata num azul profundo no fundo da gruta, uma das maravilhas naturais mais surreais de Cabo Verde.`,
   } as T,
   viewMap: {
     zh: `在 Google 地图上查看位置`,
@@ -39,9 +45,14 @@ export const hero = {
   statLength: { zh: `评分`, en: `Rating`, pt: `Avaliação` } as T,
   statFalls: { zh: `营业时间`, en: `Hours`, pt: `Horário` } as T,
   statFlow: { zh: `所在地`, en: `Location`, pt: `Local` } as T,
-  chip1: { zh: `天然蓝洞`, en: `Natural blue hole`, pt: `Olho de água natural` } as T,
+  chip1: { zh: `天然蓝眼`, en: `Natural Blue Eye`, pt: `Olho Azul natural` } as T,
   chip2: { zh: `收费参观`, en: `Paid entry`, pt: `Entrada paga` } as T,
   chip3: { zh: `日照蓝光`, en: `Sunlit blue glow`, pt: `Brilho azul solar` } as T,
+  tags: {
+    zh: [`海洋保护区周边`, `水下洞穴 22m`, `玄武岩地貌`, `避开人群`],
+    en: [`Marine reserve nearby`, `Underwater cave 22m`, `Basalt landscape`, `Avoid crowds`],
+    pt: [`Reserva marinha perto`, `Caverna 22m`, `Paisagem basáltica`, `Evite multidões`],
+  } as T,
 };
 
 // ── Manifesto (网站前言) ──
@@ -58,19 +69,24 @@ export const manifesto = {
     pt: `A todo viajante que chega a Sal`,
   } as T,
   p1: {
-    zh: `欢迎来到 Buracona。在佛得角克里奥尔语中，"Buracona" 意为"大洞"——这片由火山熔岩裂开、又被海水灌入的天然蓝洞，藏在萨尔岛西北角的荒原之中。阳光从洞口斜射而入，穿过澄澈的海水，在洞底投射出一束摄人心魄的蓝光，当地人称之为"Olho Azul"（蓝眼）。`,
-    en: `Welcome to Buracona. In Cape Verdean Creole, "Buracona" means "the big hole" — a natural blue pool carved where volcanic lava cracked and the sea poured in, hidden in the wild northwest of Sal island. Sunlight slants through the opening, pierces the clear seawater, and paints a hypnotic blue glow on the cave floor, which locals call the "Olho Azul" (Blue Eye).`,
-    pt: `Bem-vindo à Buracona. Em crioulo cabo-verdiano, "Buracona" significa "o buraco grande" — uma poça azul natural aberta onde a lava vulcânica rachou e o mar entrou, escondida no sertão noroeste da ilha do Sal. A luz do sol entra inclinada, atravessa a água limpa e pinta um azul hipnótico no fundo da gruta, que os locais chamam de "Olho Azul".`,
+    zh: `欢迎来到 Buracona。在佛得角克里奥尔语中，"Buracona" 意为"大洞"——这片由玄武岩裂隙裂开、又被海水灌入的天然蓝眼岩洞，藏在萨尔岛西北角的荒原之中。阳光从洞口斜射而入，穿过澄澈的海水，在洞底投射出一束摄人心魄的蓝光，当地人称之为"Olho Azul"（蓝眼）。`,
+    en: `Welcome to Buracona. In Cape Verdean Creole, "Buracona" means "the big hole" — a natural blue pool carved where basaltic lava cracked and the sea poured in, hidden in the wild northwest of Sal island. Sunlight slants through the opening, pierces the clear seawater, and paints a hypnotic blue glow on the cave floor, which locals call the "Olho Azul" (Blue Eye).`,
+    pt: `Bem-vindo à Buracona. Em crioulo cabo-verdiano, "Buracona" significa "o buraco grande" — uma poça azul natural aberta onde a lava basáltica rachou e o mar entrou, escondida no sertão noroeste da ilha do Sal. A luz do sol entra inclinada, atravessa a água limpa e pinta um azul hipnótico no fundo da gruta, que os locais chamam de "Olho Azul".`,
   } as T,
   p2: {
-    zh: `这里没有游乐设施，没有喧嚣——只有风、火山岩与一汪随日光变幻的蓝。每天正午前后，当太阳升至最高点，蓝光最为浓烈；而黄昏时分，不远处的"落日之窗"（Último Suspiro do Sol）又会把整片天空染成金红。Buracona 用它最朴素的方式，讲述着火山与海洋的千年对话。`,
+    zh: `这里没有游乐设施，没有喧嚣——只有风、玄武岩与一汪随日光变幻的蓝。每天正午前后，当太阳升至最高点，蓝光最为浓烈；而黄昏时分，不远处的"落日之窗"（Último Suspiro do Sol）又会把整片天空染成金红。Buracona 用它最朴素的方式，讲述着火山与海洋的千年对话。`,
     en: `There are no rides, no noise — only wind, volcanic rock and a pool of blue that shifts with the light. Around noon, when the sun climbs highest, the blue glow is at its most intense; at dusk, the nearby "Last Breath of the Sun" (Último Suspiro do Sol) sets the whole sky ablaze in gold and red. In its plainest way, Buracona tells the thousand-year conversation between volcano and ocean.`,
     pt: `Não há brinquedos nem barulho — só vento, rocha vulcânica e uma poça azul que muda com a luz. Ao meio-dia, quando o sol está mais alto, o azul é mais intenso; ao entardecer, o "Último Suspiro do Sol" ali perto incendeia o céu a ouro e vermelho. Do modo mais simples, a Buracona conta a conversa de milénios entre vulcão e oceano.`,
   } as T,
   p3: {
-    zh: `作为一家独立科普团队，我们搭建本网站，不仅为了告诉你如何抵达这片蓝洞，更想邀请你以"守护者"而非"游客"的身份来到这里。当你踩着被海风打磨了亿万年的熔岩，你既是萨尔岛荒野的见证者，也是这片蓝光得以长存的共谋者。`,
-    en: `As an independent editorial team, we built this site not only to tell you how to reach this blue hole, but to invite you to arrive as a guardian rather than a mere visitor. When you stand on lava polished by the ocean wind for aeons, you become both a witness to Sal's wilderness and a co-keeper of its blue light.`,
-    pt: `Como uma equipe editorial independente, criamos este site não apenas para dizer como chegar a esta poça azul, mas para convidá-lo a chegar como guardião e não apenas visitante. Quando pisa na lava polida pelo vento do mar durante éons, torna-se testemunha do sertão do Sal e co-zelador do seu azul.`,
+    zh: `作为一家致力于海岸保育的非盈利科普团队，我们搭建本网站，不仅为了告诉你如何抵达这片蓝眼岩洞，更想邀请你以"守护者"而非"游客"的身份来到这里。当你踩着被海风打磨了亿万年、泛着玄黑色的玄武岩，你既是萨尔岛荒野的见证者，也是这片蓝光得以长存的共谋者。`,
+    en: `As an independent editorial team, we built this site not only to tell you how to reach the Blue Eye, but to invite you to arrive as a guardian rather than a mere visitor. When you stand on basalt polished by ocean wind for aeons, you become both a witness to Sal's wilderness and a co-keeper of its blue light.`,
+    pt: `Como uma equipe editorial independente, criamos este site não apenas para dizer como chegar ao Olho Azul, mas para convidá-lo a chegar como guardião e não apenas visitante. Quando pisa no basalto polido pelo vento do mar durante éons, torna-se testemunha do sertão do Sal e co-zelador do seu azul.`,
+  } as T,
+  p4: {
+    zh: `🌍 <strong>守护蓝色经济的天然遗产。</strong>2022 年，佛得角政府与世界银行共同启动了"韧性旅游与蓝色经济发展项目"。作为萨尔岛自然瑰宝的守护者，本网站的初衷正与此契合：Buracona（蓝眼岩洞）不仅占据了萨尔岛过夜游客的视线焦点，更是这片海洋生态的重要一环。我们呼吁每一位访客，在享受这片阳光与珊瑚礁的同时，以负责任的生态旅行方式，助力佛得角蓝色经济的可持续发展。`,
+    en: `🌍 <strong>Guardians of a Blue Economy heritage.</strong> In 2022, the Cape Verdean government and the World Bank launched the "Resilient Tourism & Blue Economy Development Project". As stewards of Sal's natural treasure, this site shares that goal: Buracona is not only a highlight for Sal's overnight visitors but a vital part of the marine ecosystem. We invite every visitor to enjoy this sun and reef responsibly, and to help sustain Cape Verde's Blue Economy.`,
+    pt: `🌍 <strong>Guardiões de uma herança da Economia Azul.</strong> Em 2022, o governo de Cabo Verde e o Banco Mundial lançaram o "Projeto de Turismo Resiliente e Desenvolvimento da Economia Azul". Como zeladores do tesouro natural do Sal, este site partilha esse objetivo: a Buracona não é só o destaque dos visitantes do Sal, mas parte vital do ecossistema marinho. Convidamos cada visitante a aproveitar sol e recife com responsabilidade e a ajudar a Economia Azul de Cabo Verde.`,
   } as T,
   closing: {
     zh: `带走一张蓝光的照片，留下熔岩本来的样子。<br/>让"蓝眼"，在每个正午依旧为萨尔闪烁。`,
@@ -118,20 +134,20 @@ export const practical = {
   sectionNum: { zh: `实用游览指南`, en: `Practical Guide`, pt: `Guia prático` } as T,
   heading: { zh: `出发前<em class="text-[color:var(--color-emerald)]">必读</em>`, en: `Read this<em class="text-[color:var(--color-emerald)]"> before you go</em>.`, pt: `Leia<em class="text-[color:var(--color-emerald)]"> antes de ir</em>.` } as T,
   cards: [
-    { icon: '🕒', label: { zh: `开放时间`, en: `Hours`, pt: `Horário` } as T, value: '09:00–18:00', desc: { zh: `每日 09:00–18:00 开放，受社区协会管理。蓝眼蓝光在正午前后最盛，建议 11:00–14:00 到访。`, en: `Open daily 09:00–18:00, managed by a local community association. The Blue Eye glow peaks around midday — aim for 11:00–14:00.`, pt: `Aberto diariamente 09:00–18:00, gerido por uma associação comunitária. O azul do Olho Azul é mais forte ao meio-dia — venha entre 11:00 e 14:00.` } as T },
+    { icon: '🕒', label: { zh: `开放时间`, en: `Hours`, pt: `Horário` } as T, value: '09:00–18:00', desc: { zh: `每日 09:00–18:00 开放，受社区协会管理。蓝眼蓝光在正午（11:00–13:00）最盛，建议此时到访；但这也是旅行团高峰，想独享周边潮池的清静，可在 10:30 前抵达。`, en: `Open daily 09:00–18:00, managed by a local community association. The Blue Eye peaks at noon (11:00–13:00) — but that is also tour-bus peak. For a quiet swim in the tide pools, arrive before 10:30.`, pt: `Aberto diariamente 09:00–18:00, gerido por uma associação comunitária. O azul do Olho Azul é mais forte ao meio-dia (11:00–13:00) — mas é também o pico de autocarros. Para poças tranquilas, chegue antes das 10:30.` } as T },
     { icon: '🎟️', label: { zh: `门票与入口`, en: `Ticket & entry`, pt: `Ingresso` } as T, value: { zh: `收费`, en: `Paid`, pt: `Pago` } as T, desc: { zh: `由当地社区协会管理，需购票并由向导陪同进入。价格以现场公示为准，建议备好现金（欧元或当地埃斯库多）。`, en: `Run by a local community association — paid entry with a guide. Price as posted on site; bring cash (euros or Cape Verdean escudos).`, pt: `Gerido por associação comunitária — entrada paga com guia. Preço conforme aviso no local; leve dinheiro (euros ou escudos cabo-verdianos).` } as T },
     { icon: '⏱️', label: { zh: `游览时长`, en: `Duration`, pt: `Duração` } as T, value: '1–2 h', desc: { zh: `只看蓝眼约 30 分钟；加上泳池、落日之窗与拍照，可轻松逗留 1–2 小时。`, en: `The Blue Eye alone: ~30 min. Add the pool, the sunset window and photos and you can linger 1–2 h.`, pt: `Só o Olho Azul: ~30 min. Com a poça, o pôr do sol e fotos, dá para ficar 1–2 h.` } as T },
-    { icon: '⚠️', label: { zh: `重要贴士`, en: `Key tips`, pt: `Dicas` } as T, value: '', desc: '', tips: [{ zh: `地面是锋利火山熔岩，请穿包裹性好的运动鞋`, en: `Ground is sharp volcanic lava — wear closed, sturdy shoes`, pt: `O chão é lava vulcânica afiada — use calçado fechado e resistente` } as T, { zh: `岛上日照极强、无遮荫，请带足饮水与防晒`, en: `Intense sun and no shade — bring plenty of water and sun protection`, pt: `Sol forte e sem sombra — leve água e proteção solar` } as T, { zh: `请全程跟随向导，勿翻越护栏或跳水`, en: `Stay with your guide; do not climb rails or dive`, pt: `Fique com o guia; não suba nas grades nem mergulhe` } as T] },
+    { icon: '⚠️', label: { zh: `重要贴士`, en: `Key tips`, pt: `Dicas` } as T, value: '', desc: '', tips: [{ zh: `地面是锋利的<strong>玄武岩</strong>，请穿包裹性好的运动鞋`, en: `Ground is sharp <strong>basalt</strong> — wear closed, sturdy shoes`, pt: `O chão é <strong>basalto</strong> afiado — use calçado fechado e resistente` } as T, { zh: `岛上日照极强、无遮荫，请带足饮水与防晒`, en: `Intense sun and no shade — bring plenty of water and sun protection`, pt: `Sol forte e sem sombra — leve água e proteção solar` } as T, { zh: `请全程跟随向导，勿翻越护栏或跳水`, en: `Stay with your guide; do not climb rails or dive`, pt: `Fique com o guia; não suba nas grades nem mergulhe` } as T, { zh: `<strong class="text-[color:var(--color-emerald)]">请勿将个人物品单独留在岸边</strong>`, en: `<strong class="text-[color:var(--color-emerald)]">Never leave your belongings unattended on the shore</strong>`, pt: `<strong class="text-[color:var(--color-emerald)]">Nunca deixe os seus pertences sozinhos na praia</strong>` } as T, { zh: `<strong class="text-[color:var(--color-emerald)]">请带走所有野餐垃圾，保护脆弱的蓝色经济生态</strong>`, en: `<strong class="text-[color:var(--color-emerald)]">Take all picnic litter with you — protect the fragile Blue Economy ecosystem</strong>`, pt: `<strong class="text-[color:var(--color-emerald)]">Leve todo o lixo do piquenique — proteja o frágil ecossistema da Economia Azul</strong>` } as T] },
   ],
 };
 
 // ── Transport ──
 export const transport = {
   sectionNum: { zh: `交通指南`, en: `Transport`, pt: `Transporte` } as T,
-  heading: { zh: `三种方式<br/><em class="text-[color:var(--color-emerald)]">到达蓝洞</em>`, en: `Three ways<br/><em class="text-[color:var(--color-emerald)]">to arrive</em>`, pt: `Três formas<br/><em class="text-[color:var(--color-emerald)]">de chegar</em>` } as T,
+  heading: { zh: `三种方式<br/><em class="text-[color:var(--color-emerald)]">到达蓝眼岩洞</em>`, en: `Three ways<br/><em class="text-[color:var(--color-emerald)]">to arrive</em>`, pt: `Três formas<br/><em class="text-[color:var(--color-emerald)]">de chegar</em>` } as T,
   subtitle: { zh: `Buracona 位于萨尔岛西北角的荒原，距主镇 Santa Maria 约 30 公里，无公交直达，建议租车、包车或参加一日游。`, en: `Buracona sits in the wild northwest of Sal, about 30 km from the main town Santa Maria. There is no direct bus — rent a car, hire a taxi, or join a day tour.`, pt: `A Buracona fica no sertão noroeste do Sal, a cerca de 30 km da vila de Santa Maria. Não há autocarro direto — alugue carro, táxi ou junte-se a um passeio.` } as T,
   items: [
-    { icon: '🚕', title: { zh: `从 Santa Maria 包车 / 出租车`, en: `From Santa Maria by taxi`, pt: `De Santa Maria de táxi` } as T, meta: '~30 km · 30–40 min', details: [{ icon: '🚖', text: { zh: `<strong>出租车 / Aluguer</strong> · 岛上的共享出租车（aluguer）或包车从 Santa Maria 出发，沿 EN1 向北再转西，直达 Buracona 停车场，约 30–40 分钟。`, en: `<strong>Taxi / Aluguer</strong> · Shared aluguers or a private taxi from Santa Maria head north on the EN1 then west to the Buracona car park, about 30–40 min.`, pt: `<strong>Táxi / Aluguer</strong> · Aluguers partilhados ou táxi privado de Santa Maria seguem norte pela EN1 e depois oeste até o estacionamento da Buracona, cerca de 30–40 min.` } as T }, { icon: '🗺️', text: { zh: `<strong>一日游</strong> · 多数旅行社提供"蓝眼洞 + 盐湖 Pedra de Lume + 沙丘"环岛线路，含门票与向导。`, en: `<strong>Day tour</strong> · Most agencies run an island loop "Blue Eye + Pedra de Lume salt lake + dunes" with entry and guide included.`, pt: `<strong>Passeio</strong> · A maioria das agências faz o circuito "Olho Azul + salinas de Pedra de Lume + dunas" com entrada e guia.` } as T }] },
+    { icon: '🚕', title: { zh: `从 Santa Maria 包车 / 出租车`, en: `From Santa Maria by taxi`, pt: `De Santa Maria de táxi` } as T, meta: '~30 km · 45–50 min', details: [{ icon: '🚖', text: { zh: `<strong>出租车 / Aluguer</strong> · 岛上的共享出租车（aluguer）或包车从 Santa Maria 出发，沿 EN1 向北再转西抵达 Buracona。最后一段常为非铺装土路（off-road），颠簸且需慢行，整体约 45–50 分钟。`, en: `<strong>Taxi / Aluguer</strong> · Shared aluguers or a private taxi from Santa Maria go north on the EN1 and then west to Buracona. The last stretch is often unpaved (off-road), so the full ride is typically 45–50 min.`, pt: `<strong>Táxi / Aluguer</strong> · Aluguers partilhados ou táxi privado de Santa Maria seguem norte pela EN1 e depois oeste até a Buracona. O último trecho é muitas vezes de terra (off-road), por isso o total costuma ser 45–50 min.` } as T }, { icon: '🗺️', text: { zh: `<strong>一日游</strong> · 多数旅行社提供"蓝眼岩洞 + 盐湖 Pedra de Lume + 沙丘"环岛线路，含门票与向导。`, en: `<strong>Day tour</strong> · Most agencies run an island loop "Blue Eye + Pedra de Lume salt lake + dunes" with entry and guide included.`, pt: `<strong>Passeio</strong> · A maioria das agências faz o circuito "Olho Azul + salinas de Pedra de Lume + dunas" com entrada e guia.` } as T }] },
     { icon: '✈️', title: { zh: `从 Espargos 机场`, en: `From Espargos airport`, pt: `Do aeroporto de Espargos` } as T, meta: '~20 km · 25 min', details: [{ icon: '🚐', text: { zh: `<strong>接机 + 顺路</strong> · 从 Amílcar Cabral 机场出发约 20 公里，多数游客会将其安排在环岛游的其中一站。`, en: `<strong>Transfer + stop</strong> · About 20 km from Amílcar Cabral airport; most visitors slot it into an island tour.`, pt: `<strong>Transfer + paragem</strong> · Cerca de 20 km do aeroporto Amílcar Cabral; a maioria inclui no passeio da ilha.` } as T }, { icon: '🚗', text: { zh: `<strong>自驾</strong> · 沿 EN1 北上至 Palmeira 岔路，按路标向西进入土路，最后一段为非铺装路面，建议四驱或谨慎驾驶。`, en: `<strong>Self-drive</strong> · North on the EN1 to the Palmeira turn-off, then west on signposted tracks; the final stretch is unpaved — 4x4 or careful driving advised.`, pt: `<strong>Carro próprio</strong> · Norte pela EN1 até o desvio de Palmeira, depois oeste por caminhos sinalizados; o último trecho é de terra — 4x4 ou condução cuidadosa.` } as T }] },
     { icon: '🚲', title: { zh: `骑行或徒步`, en: `On foot / by bike`, pt: `A pé ou de bike` } as T, meta: 'Remoto · 无遮荫', details: [{ icon: '', text: { zh: `<strong>不建议</strong> · Buracona 地处偏僻、无遮荫、补给极少，单独骑行或徒步风险较高；如坚持，请清晨出发并带足饮水。`, en: `<strong>Not advised</strong> · Buracona is remote, shadeless and poorly supplied; cycling or hiking alone is risky. If you must, start at dawn with plenty of water.`, pt: `<strong>Não recomendado</strong> · A Buracona é remota, sem sombra e com pouco apoio; ir de bike ou a pé sozinho é arriscado. Se insistir, parta de madrugada com água.` } as T }] },
   ],
@@ -142,18 +158,18 @@ export const encyclopedia = {
   sectionNum: { zh: `深度百科`, en: `Encyclopedia`, pt: `Enciclopédia` } as T,
   heading: { zh: `名字、光与<em class="text-[color:var(--color-emerald)]">一座岛的荒野</em>`, en: `Name, light &amp;<br/><em class="text-[color:var(--color-emerald)]"> an island's wild</em>`, pt: `Nome, luz e<br/><em class="text-[color:var(--color-emerald)]"> o sertão de uma ilha</em>` } as T,
   subtitle: {
-    zh: `从火山熔岩的裂隙，到正午那束蓝光，再到当地人送别太阳的岩台——这片荒地背后，藏着萨尔岛几段关键的自然记忆。`,
-    en: `From a crack in volcanic lava, to the beam of blue at noon, to the ledge where locals bid the sun farewell — behind this wilderness lie a few key memories of Sal's nature.`,
-    pt: `De uma fenda na lava vulcânica, ao feixe azul do meio-dia, à plataforma onde os locais despedem o sol — atrás deste sertão estão memórias da natureza do Sal.`,
+    zh: `从玄武岩海岸的裂隙与海蚀洞，到正午那束蓝光，再到当地人送别太阳的岩台——这片荒地背后，藏着萨尔岛几段关键的自然记忆。`,
+    en: `From fissures and sea caves carved into basalt, to the beam of blue at noon, to the ledge where locals bid the sun farewell — behind this wilderness lie key memories of Sal.`,
+    pt: `De fendas e grutas marinhas em basalto, ao feixe azul do meio-dia, à plataforma onde os locais despedem o sol — atrás deste sertão estão memórias-chave do Sal.`,
   } as T,
   items: [
     {
       icon: '🌋',
       title: { zh: `"Buracona" 名字的由来`, en: `The name "Buracona"`, pt: `O nome "Buracona"` } as T,
       body: {
-        zh: `<p>"Buracona" 在佛得角克里奥尔语中意为"大洞"。萨尔岛由海底火山喷发而成，冷却的熔岩在西北角裂开巨大的缝隙，海水顺着裂缝灌入低洼处，久而久之形成了这片深浅不一的蓝洞与潮池。</p><p>它并非人工泳池，而是火山与海洋共同雕刻的天然地貌。正因如此，洞口朝向与裂隙深度，决定了阳光能在正午折射出那束著名的蓝光。</p>`,
-        en: `<p>"Buracona" means "the big hole" in Cape Verdean Creole. Sal island rose from submarine volcanoes; as the lava cooled it cracked open in the northwest, and the sea poured into the low ground, slowly shaping these blue pools and tide pools of varying depth.</p><p>It is not a man-made pool but a natural landform carved by volcano and ocean. That is exactly why the opening's orientation and the fissure's depth let the sun refract that famous blue glow at noon.</p>`,
-        pt: `<p>"Buracona" significa "o buraco grande" em crioulo cabo-verdiano. A ilha do Sal veio de vulcões submarinos; ao arrefecer, a lava rachou no noroeste e o mar entrou nas terras baixas, formando essas poças azuis e de maré de várias profundidades.</p><p>Não é uma piscina artificial, mas uma forma natural esculpida por vulcão e oceano. É por isso que a orientação da abertura e a profundidade da fenda deixam o sol refratar aquele azul famoso ao meio-dia.</p>`,
+        zh: `<p>"Buracona" 在佛得角克里奥尔语中意为"大洞"。萨尔岛源于海底火山喷发：玄武质熔岩冷却成黑色<strong>玄武岩</strong>，在岛的西北角被地壳张裂与海浪侵蚀撕开裂隙与海蚀洞。海水顺着裂缝灌入低洼处，形成潮池与水下洞穴。</p><p><span class="science-only">严格说，Buracona 并非典型海洋学意义上的“蓝洞（Blue Hole）”垂直沉洞，而更接近海岸裂隙潮池与海蚀洞系统。</span>洞口朝向与裂隙深度，决定了阳光能在正午折射出那束著名的蓝光。</p>`,
+        en: `<p>"Buracona" means "the big hole" in Cape Verdean Creole. Sal rose from submarine volcanism: basaltic lava cooled into black <strong>basalt</strong>, then tectonic cracking and Atlantic erosion opened fissures and sea caves along the northwest coast. Seawater flooded the low ground and shaped tide pools and underwater cavities.</p><p><span class="science-only">Strictly speaking, Buracona is not a classic oceanographic “Blue Hole” (a vertical sinkhole), but a coastal fissure–tide-pool and sea-cave system.</span> The opening's orientation and the fissure's depth are what allow the sun to refract that famous blue glow at noon.</p>`,
+        pt: `<p>"Buracona" significa "o buraco grande" em crioulo cabo-verdiano. O Sal nasceu de vulcanismo submarino: lava basáltica arrefeceu em <strong>basalto</strong> negro, e depois fraturas tectónicas e a erosão do Atlântico abriram fendas e grutas marinhas na costa noroeste. A água do mar invadiu as zonas baixas, formando poças de maré e cavidades submersas.</p><p><span class="science-only">Em termos estritos, a Buracona não é um “Blue Hole” vertical típico, mas um sistema costeiro de fendas, poças e grutas marinhas.</span> A orientação da abertura e a profundidade da fenda deixam o sol refratar aquele azul famoso ao meio-dia.</p>`,
       } as T,
       img: '/gallery/buracona-blue-eye-cave (5).jpg',
     },
@@ -187,6 +203,56 @@ export const encyclopedia = {
       } as T,
       img: '/gallery/buracona-blue-eye-cave (8).jpg',
     },
+    {
+      icon: '⛵',
+      title: { zh: `大航海时代的暗礁与灯塔`, en: `Reefs & logbooks of the Age of Sail`, pt: `Recifes e diários da Era das Navegações` } as T,
+      body: {
+        zh: `<p>15 世纪起，佛得角成为葡萄牙大航海时代穿越大西洋的关键补给与航路节点。萨尔岛西北部这段崎岖玄武岩海岸，曾在早期航海日志中被反复标注为“危险水域”：海浪与暗礁会在夜间无声撕裂船体。</p><p>在这样的地理背景下，Buracona 一带的岩洞与背风岩台，曾被幸存水手当作暂避风暴与整备的天然庇护所。今天你站在洞口俯看蓝光，也是在与一段大西洋航路史擦肩而过。</p>`,
+        en: `<p>From the 15th century onward, Cape Verde became a key waypoint in Portuguese Atlantic navigation. Along Sal’s northwest, jagged basalt coastline was repeatedly marked in early logbooks as hazardous: reefs and surf could tear hulls apart, especially at night.</p><p>In that setting, the caves and leeward ledges around Buracona likely served as natural shelter for sailors seeking a moment of calm after a storm. When you lean over the opening today, you are also touching the edge of an Atlantic maritime history.</p>`,
+        pt: `<p>Desde o século XV, Cabo Verde tornou-se um ponto-chave nas rotas atlânticas portuguesas. No noroeste do Sal, a costa basáltica recortada aparece em relatos antigos como zona perigosa: recifes e rebentação podiam rasgar cascos, sobretudo à noite.</p><p>Nesse contexto, grutas e plataformas abrigadas na área da Buracona podem ter servido como refúgio natural para marinheiros após tempestades. Ao olhar o azul hoje, toca também uma margem da história marítima do Atlântico.</p>`,
+      } as T,
+      img: '/gallery/buracona-blue-eye-cave (15).jpg',
+    },
+    {
+      icon: '🧿',
+      title: { zh: `“海神之眼”：渔民的口耳传说`, en: `“The Sea God's Eye”: a fishermen's tale`, pt: `“O Olho do Mar”: uma lenda de pescadores` } as T,
+      body: {
+        zh: `<p>在当地渔民的讲述里，Buracona 不只是一处岩洞：它是海洋之神凝视天空的眼睛。只有在正午阳光最烈时，神明才会“睁眼”，让洞底亮起最纯粹的幽蓝。</p><p>传说当然无法替代科学解释，但它提醒我们：同一束光，既属于物理，也属于人类的语言与记忆。<span class="science-only">如果你愿意，把这则故事当作“文化的结构化数据”——它让冰冷的玄武岩获得了温度。</span></p>`,
+        en: `<p>In local fishermen’s telling, Buracona is more than a rock cavity: it is the sea god’s eye watching the sky. Only when the midday sun is strongest does the deity “open” the eye, turning the bottom into its purest blue.</p><p>Legends do not replace science, but they remind us that the same beam of light belongs to physics and to human memory. <span class="science-only">Think of it as cultural “structured data” — a way basalt becomes warm with meaning.</span></p>`,
+        pt: `<p>Na voz dos pescadores locais, a Buracona não é só uma gruta: é o olho do deus do mar a olhar o céu. Apenas quando o sol do meio-dia é mais forte o deus “abre” o olho, e o fundo brilha num azul puro.</p><p>Lendas não substituem ciência, mas lembram que a mesma luz pertence à física e à memória humana. <span class="science-only">Veja como “dados estruturados culturais” — uma forma de dar calor ao basalto.</span></p>`,
+      } as T,
+      img: '/gallery/buracona-blue-eye-cave (16).jpg',
+    },
+    {
+      icon: '🗿',
+      title: { zh: `五千万年的地质切片`, en: `A 50‑million‑year geology slice`, pt: `Um corte geológico de 50 milhões de anos` } as T,
+      body: {
+        zh: `<p>萨尔岛被认为是佛得角群岛中最古老的岛屿之一。你脚下的黑色玄武岩不是一蹴而就：它来自多次海底喷发的叠加，随后又被大西洋的盐雾、风与浪，持续侵蚀与抛光了数千万年。</p><p>Buracona 的裂隙与海蚀洞，正是地壳张裂与海浪侵蚀共同作用的“活化石”。<span class="science-only">玄武岩的深色吸热强、风化后边缘锋利，这也解释了为何这里必须穿包裹性好的鞋。</span></p>`,
+        en: `<p>Sal is often described as one of the oldest islands in Cape Verde. The black basalt underfoot was not formed in a single moment: it is built from repeated submarine eruptions, then sculpted and polished for tens of millions of years by Atlantic salt spray, wind and waves.</p><p>Buracona’s fissures and sea caves are living fossils of crustal cracking plus marine erosion. <span class="science-only">Basalt is dark and heat-absorbing, and weathering can leave razor edges — a geological reason behind the “closed shoes” rule.</span></p>`,
+        pt: `<p>O Sal é frequentemente apontado como uma das ilhas mais antigas de Cabo Verde. O basalto negro aos seus pés não nasceu num só episódio: é a soma de erupções submarinas repetidas, depois esculpidas por dezenas de milhões de anos de sal, vento e ondas do Atlântico.</p><p>As fendas e grutas da Buracona são “fósseis vivos” da fratura da crosta somada à erosão marinha. <span class="science-only">O basalto é escuro, absorve calor e pode ficar cortante com a meteorização — daí a importância de calçado fechado.</span></p>`,
+      } as T,
+      img: '/gallery/buracona-blue-eye-cave (17).jpg',
+    },
+    {
+      icon: '🕳️',
+      title: { zh: `探秘 22 米深的水下隧道`, en: `A 22‑metre underwater tunnel`, pt: `Um túnel submerso de 22 metros` } as T,
+      body: {
+        zh: `<p>“蓝眼”不仅是洞口的光影魔术。在这汪碧绿与深蓝交织的池水下方，隐藏着一条深达约 22 米的天然水下隧道，海水通过它与大西洋相连。</p><p><span class="science-only">对持有专业资质的洞穴潜水员而言，这是一扇可以从岩洞进入深海的门；对普通游客而言，它则提醒我们：请勿擅自下水、勿向洞内投掷物品。</span></p>`,
+        en: `<p>The “Blue Eye” is not just surface optics. Beneath the green‑and‑blue pool lies a natural underwater tunnel reaching roughly 22 metres deep, connecting the cavity to the Atlantic.</p><p><span class="science-only">For certified cave divers it can be a gateway from rock to open ocean; for most visitors it is a reminder: do not enter the Eye, and never throw anything into the cavity.</span></p>`,
+        pt: `<p>O “Olho Azul” não é só um truque de luz na superfície. Sob a poça há um túnel natural submerso com cerca de 22 metros de profundidade, ligado ao Atlântico.</p><p><span class="science-only">Para mergulhadores de gruta certificados pode ser uma porta para o mar aberto; para a maioria, é um aviso: não entre no Olho Azul e não atire nada para dentro.</span></p>`,
+      } as T,
+      img: '/gallery/buracona-blue-eye-cave (18).jpg',
+    },
+    {
+      icon: '🧂',
+      title: { zh: `“萨尔”之名：因盐而兴的岛屿`, en: `Why Sal means “salt”`, pt: `Por que Sal é “sal”` } as T,
+      body: {
+        zh: `<p>“Sal” 在葡萄牙语中意为“盐”。从 18 世纪到 20 世纪中期，萨尔岛因制盐与盐贸易而兴，Pedra de Lume 的盐湖便是这一历史的遗迹。</p><p>当你凝视 Buracona 带着盐分的潮池，你看到的不只是蓝光，也是在回望这座岛屿数百年的产业脉络与海洋经济。<span class="science-only">盐雾与盐结晶也会加速岩石风化，这是海岸地貌持续变化的另一把刻刀。</span></p>`,
+        en: `<p>“Sal” means “salt” in Portuguese. From the 18th century into the mid‑20th, salt extraction and trade shaped the island’s economy — and the salt crater at Pedra de Lume is a remaining trace.</p><p>When you look at Buracona’s saline tide pool, you are not only watching blue light; you are also looking back at centuries of coastal industry and ocean economy. <span class="science-only">Salt spray and crystallisation also accelerate rock weathering — another chisel shaping this shoreline.</span></p>`,
+        pt: `<p>“Sal” significa “sal” em português. Do século XVIII até meados do século XX, a extração e o comércio de sal marcaram a economia da ilha — e a cratera de sal em Pedra de Lume é um vestígio.</p><p>Ao olhar a poça salina da Buracona, não vê só o azul: vê também séculos de indústria costeira e economia do mar. <span class="science-only">A maresia e a cristalização do sal aceleram a meteorização — mais uma ferramenta que esculpe esta costa.</span></p>`,
+      } as T,
+      img: '/gallery/buracona-blue-eye-cave (19).jpg',
+    },
   ],
 };
 
@@ -201,6 +267,11 @@ export const climate = {
   falling: { zh: `退潮中`, en: `Falling`, pt: `Baixando` } as T,
   nextHigh: { zh: `下次高潮`, en: `Next high`, pt: `Próx. cheia` } as T,
   nextLow: { zh: `下次低潮`, en: `Next low`, pt: `Próx. baixa` } as T,
+  timelineLabel: { zh: `蓝眼光照时间轴`, en: `Blue Eye light timeline`, pt: `Linha do tempo da luz` } as T,
+  timelineDesc: { zh: `拖动时间点，直观看“蓝眼”为什么在正午最盛。此为示意曲线（以太阳高度角近似），请以现场观感为准。`, en: `Drag the time to see why the Blue Eye peaks around noon. This is an illustrative curve (approx. sun angle), not a measurement.`, pt: `Arraste a hora para ver por que o Olho Azul atinge o pico ao meio-dia. Curva ilustrativa (aprox. ângulo solar), não é medição.` } as T,
+  timelineTime: { zh: `时间`, en: `Time`, pt: `Hora` } as T,
+  timelineGlow: { zh: `蓝光强度`, en: `Blue glow`, pt: `Intensidade do azul` } as T,
+  timelineBest: { zh: `推荐窗口：11:00–13:00`, en: `Best window: 11:00–13:00`, pt: `Melhor janela: 11:00–13:00` } as T,
   loading: { zh: `正在获取实时数据…`, en: `Loading live data…`, pt: `Carregando dados…` } as T,
   error: { zh: `实时数据暂时不可用，请参考上方游览指南。`, en: `Live data unavailable — see the guide above.`, pt: `Dados indisponíveis — veja o guia acima.` } as T,
   source: { zh: `数据来源：Sunrise-Sunset.org · Open-Meteo`, en: `Source: Sunrise-Sunset.org · Open-Meteo`, pt: `Fonte: Sunrise-Sunset.org · Open-Meteo` } as T,
@@ -219,6 +290,8 @@ export const reviews = {
   heading: { zh: `4.3<span class="text-[color:var(--color-emerald)]">/5</span> · 来自 4,750 位旅行者`, en: `4.3<span class="text-[color:var(--color-emerald)]">/5</span> · from 4,750 travelers`, pt: `4.3<span class="text-[color:var(--color-emerald)]">/5</span> · de 4.750 viajantes` } as T,
   viewMoreReviews: { zh: `在 Google 地图上查看更多评价`, en: `View more reviews on Google Maps`, pt: `Ver mais avaliações no Google Maps` } as T,
   items: [
+    { stars: '★★★★★', date: '2026-06', title: { zh: `"科普模式看懂了蓝光"`, en: `"Now I understand the blue"`, pt: `"Agora entendo o azul"` } as T, desc: { zh: `以前只知道“正午最蓝”，这次跟着向导又看了网站的科普解释，才明白是水对红光吸收更强、加上裂隙反射造成的。看懂之后反而更震撼。`, en: `I always heard “noon is bluest”. With the guide + the science notes here, I finally understood the optics — and it made the view even more powerful.`, pt: `Eu só sabia “ao meio-dia é mais azul”. Com o guia e as notas de ciência aqui, entendi a ótica — e fiquei ainda mais impressionado.` } as T, author: 'Aya K. · 🧭 · 🇯🇵' },
+    { stars: '★★★★★', date: '2026-02', title: { zh: `"路况比想象颠簸"`, en: `"Bumpier road than expected"`, pt: `"Estrada mais esburacada"` } as T, desc: { zh: `从 Santa Maria 过来最后一段土路真的很颠，但景色超值。建议早点出发，正午看蓝眼、傍晚去落日之窗，一天安排刚好。`, en: `The last unpaved stretch from Santa Maria is genuinely bumpy, but the payoff is huge. Start early: Blue Eye at noon, sunset window later — perfect day.`, pt: `O último trecho de terra desde Santa Maria é mesmo esburacado, mas vale muito. Saia cedo: Olho Azul ao meio-dia e pôr do sol depois.` } as T, author: 'Nuno P. · 🇵🇹' },
     { stars: '★★★★★', date: '2025-05', title: { zh: `"正午的蓝光名不虚传"`, en: `"The noon blue lives up to it"`, pt: `"O azul do meio-dia é real"` } as T, desc: { zh: `听向导说正午来，果然没错。约 12 点站在洞口，池水蓝得像被点亮的宝石，手机都拍不出十分之一。`, en: `Our guide said come at noon — he was right. Around 12 the pool glows like a lit gem; no phone captures a tenth of it.`, pt: `O guia disse para vir ao meio-dia — tinha razão. Pelas 12 a poça brilha como gema acesa; nem o telemóvel apanha um décimo.` } as T, author: 'Marina C. · 海洋爱好者 · 🇧🇷' },
     { stars: '★★★★★', date: '2025-04', title: { zh: `"向导让旅程更有温度"`, en: `"Guides made it warmer"`, pt: `"Os guias deram calor"` } as T, desc: { zh: `买票含向导，本地小哥讲了蓝眼的光学原理和落日之窗的传说，比自己瞎逛有意义多了。`, en: `Ticket includes a guide; the local lad explained the optics of the Blue Eye and the sunset-window legend — far better than wandering alone.`, pt: `O bilhete inclui guia; o rapaz local explicou a ótica do Olho Azul e a lenda do pôr do sol — bem melhor que ir sozinho.` } as T, author: 'James W. · 🇺🇸' },
     { stars: '★★★★<span class="text-black/20">★</span>', date: '2025-03', title: { zh: `"路远但值得"`, en: `"Far but worth it"`, pt: `"Longe mas vale"` } as T, desc: { zh: `从 Santa Maria 包车过来要四十分钟土路，但看到蓝眼那一刻全值了。建议自备饮水，沿途真的什么都没有。`, en: `About 40 min of track from Santa Maria by taxi, but the Blue Eye made it worthwhile. Bring your own water — there is nothing on the way.`, pt: `Cerca de 40 min de terra de Santa Maria de táxi, mas o Olho Azul compensou. Leve água — não há nada no caminho.` } as T, author: 'Lin Y. · 🇨🇳' },
@@ -234,8 +307,10 @@ export const surrounding = {
   heading: { zh: `还可以<em class="text-[color:var(--color-emerald)]">连着玩</em>`, en: `Extend the trip<em class="text-[color:var(--color-emerald)]"> further</em>`, pt: `Estenda a viagem<em class="text-[color:var(--color-emerald)]"> ainda mais</em>` } as T,
   items: [
     { img: '/gallery/buracona-blue-eye-cave (9).jpg', title: '🏖️ Santa Maria', desc: { zh: `萨尔岛最大的度假小镇，绵延的金色沙滩与风帆冲浪闻名。多数游客以此为基地，包车北上前往 Buracona 约 30 公里。`, en: `Sal's main resort town — long golden beaches and windsurfing. Most visitors base here and drive ~30 km north to Buracona.`, pt: `A principal vila turística do Sal — praias douradas e windsurf. A maioria baseia aqui e vai ~30 km norte até a Buracona.` } as T },
-    { img: '/gallery/buracona-blue-eye-cave (11).jpg', title: '🧂 Pedra de Lume 盐湖', desc: { zh: `岛东部的废弃盐矿，高盐度湖水让人轻松漂浮，号称"佛得角的死海"。常与蓝眼洞安排在同一日游线路中。`, en: `An abandoned salt mine in the east of the island; its hyper-saline water lets you float effortlessly — the "Dead Sea of Cape Verde". Often paired with Buracona on the same tour.`, pt: `Minas de sal abandonadas a leste; a água hiper-salina faz flutuar sem esforço — o "Mar Morto de Cabo Verde". Muitas vezes junto com a Buracona no mesmo passeio.` } as T },
+    { img: '/gallery/buracona-blue-eye-cave (11).jpg', title: '🧂 Pedra de Lume 盐湖', desc: { zh: `岛东部的废弃盐矿，高盐度湖水让人轻松漂浮，号称"佛得角的死海"。常与蓝眼岩洞安排在同一日游线路中。`, en: `An abandoned salt mine in the east of the island; its hyper-saline water lets you float effortlessly — the "Dead Sea of Cape Verde". Often paired with Buracona on the same tour.`, pt: `Minas de sal abandonadas a leste; a água hiper-salina faz flutuar sem esforço — o "Mar Morto de Cabo Verde". Muitas vezes junto com a Buracona no mesmo passeio.` } as T },
     { img: '/gallery/buracona-blue-eye-cave (12).jpg', title: '🌊 Baía da Murdeira', desc: { zh: `萨尔岛南岸的半封闭海湾，水质清澈、风平浪静，是浮潜与观鸟的好去处，沿途还能看到岛上的火烈鸟。`, en: `A semi-enclosed bay on Sal's south coast — clear, calm water, good for snorkelling and birdwatching, with flamingos along the way.`, pt: `Uma baía semi-fechada no sul do Sal — água limpa e calma, boa para snorkel e aves, com flamingos pelo caminho.` } as T },
+    { img: '/gallery/buracona-blue-eye-cave (13).jpg', title: '🦅 Serra Negra', desc: { zh: `萨尔岛南部的自然保护区，保护范围延伸至离岸 300 米的海洋水域。山与海相接，是珍稀海鸟与化石沙丘的共同栖息地。`, en: `A protected area in southern Sal whose boundary extends 300 m offshore. Where mountain meets sea, it shelters rare seabirds and fossil dunes.`, pt: `Área protegida no sul do Sal com limite que se estende 300 m ao largo. Montanha e mar juntos — abrigo de aves marinhas e dunas fósseis.` } as T },
+    { img: '/gallery/buracona-blue-eye-cave (14).jpg', title: '🦁 Monte Leão & Rabo de Junco', desc: { zh: `萨尔岛另一段野性海岸：狮子山的风化山体与 Rabo de Junco 的礁岸线，适合做“陆地风化 vs 海蚀塑形”的时空对比。`, en: `Another wild stretch of Sal: the weathered mass of Monte Leão and the reef coast of Rabo de Junco — perfect for a land‑erosion vs sea‑carving contrast.`, pt: `Outro litoral selvagem do Sal: o maciço erodido do Monte Leão e a costa recifal de Rabo de Junco — ótimo para comparar erosão terrestre e marinha.` } as T },
   ],
 };
 
@@ -368,9 +443,9 @@ export const faq = {
     {
       q: { zh: `参观安全吗？`, en: `Is it safe to visit?`, pt: `É seguro visitar?` } as T,
       a: {
-        zh: `地面是锋利且吸热火山熔岩，容易割伤与烫伤，请穿包裹性好的运动鞋、带足饮水与防晒，并全程跟随向导，勿翻越护栏或跳水。`,
-        en: `The ground is sharp, heat-holding volcanic lava — wear closed sturdy shoes, bring water and sun protection, and stay with your guide at all times. Do not climb rails or dive.`,
-        pt: `O chão é lava vulcânica afiada e quente — use calçado fechado e resistente, leve água e protetor solar, e fique com o guia. Não suba nas grades nem mergulhe.`,
+        zh: `地面是锋利且吸热的<strong>玄武岩</strong>，容易割伤与烫伤，请穿包裹性好的运动鞋、带足饮水与防晒，并全程跟随向导，勿翻越护栏或跳水。`,
+        en: `The ground is sharp, heat-holding <strong>basalt</strong> — wear closed sturdy shoes, bring water and sun protection, and stay with your guide at all times. Do not climb rails or dive.`,
+        pt: `O chão é <strong>basalto</strong> afiado e quente — use calçado fechado e resistente, leve água e protetor solar, e fique com o guia. Não suba nas grades nem mergulhe.`,
       } as T,
     },
   ],
@@ -426,7 +501,7 @@ export const leaveNoTrace = {
       icon: '🏊',
       title: { zh: `只在指定水域戏水`, en: `Swim Only in Designated Water`, pt: `Nade só na água indicada` } as T,
       desc: {
-        zh: `蓝眼洞本身禁止下水；仅可在向导指定的开放潮池浮潜戏水，避免扰动洞底生态。`,
+        zh: `蓝眼岩洞本身禁止下水；仅可在向导指定的开放潮池浮潜戏水，避免扰动洞底生态。`,
         en: `The Blue Eye itself is off-limits for swimming; only snorkel in the open pool your guide indicates, to avoid disturbing the cave floor.`,
         pt: `O próprio Olho Azul é proibido para banho; só mergulhe na poça aberta que o guia indicar.`,
       } as T,
@@ -435,9 +510,9 @@ export const leaveNoTrace = {
       icon: '🪨',
       title: { zh: `注意安全，远离锋利熔岩`, en: `Stay Safe, Off the Sharp Lava`, pt: `Cuidado, longe da lava afiada` } as T,
       desc: {
-        zh: `火山熔岩长期暴晒、边缘锋利；大浪来袭时会没过脚下的平台。请穿包裹鞋，与浪花保持距离，切勿背对大海。`,
-        en: `The lava is sun-baked and sharp; big waves can wash over the platform. Wear closed shoes, keep clear of the surf, and never turn your back on the sea.`,
-        pt: `A lava é quente e afiada; ondas grandes cobrem a plataforma. Use calçado fechado, longe da onda, nunca de costas para o mar.`,
+        zh: `玄武岩长期暴晒、边缘锋利；大浪来袭时会没过脚下的平台。请穿包裹鞋，与浪花保持距离，切勿背对大海。`,
+        en: `The basalt is sun-baked and sharp; big waves can wash over the platform. Wear closed shoes, keep clear of the surf, and never turn your back on the sea.`,
+        pt: `O basalto é quente e afiado; ondas grandes cobrem a plataforma. Use calçado fechado, longe da onda, nunca de costas para o mar.`,
       } as T,
     },
   ],
@@ -468,7 +543,7 @@ export const partners = {
       url: 'https://www.caboverde-airports.cv/en/cape-verde/sal/',
       abbr: 'CV AIR',
       note: { zh: `佛得角机场管理署 · 萨尔岛`, en: `Cabo Verde Airports · Sal`, pt: `Cabo Verde Airports · Sal` } as T,
-      attr: { zh: `国家级航空与机场基础设施官方门户，萨尔岛专页在景点名录中明确提到 Buracona 与 Olho Azul（蓝眼洞）。`, en: `The national aviation and airport infrastructure portal; its Sal page names Buracona and Olho Azul in the attractions list.`, pt: `Portal nacional de aviação e infraestrutura aeroportuária; a página de Sal cita Buracona e Olho Azul na lista de atrações.` } as T,
+      attr: { zh: `国家级航空与机场基础设施官方门户，萨尔岛专页在景点名录中明确提到 Buracona 与 Olho Azul（蓝眼岩洞）。`, en: `The national aviation and airport infrastructure portal; its Sal page names Buracona and Olho Azul in the attractions list.`, pt: `Portal nacional de aviação e infraestrutura aeroportuária; a página de Sal cita Buracona e Olho Azul na lista de atrações.` } as T,
     },
     {
       name: { zh: `Portal do Comércio（佛得角政府商业门户）`, en: `Portal do Comércio (Government Commerce Portal)`, pt: `Portal do Comércio (Portal do Comércio do Governo)` } as T,
@@ -616,6 +691,6 @@ export const cookies = {
 
 // ── Meta ──
 export const meta = {
-  title: { zh: `Buracona · 蓝眼洞 — 佛得角萨尔岛的火山岩蓝洞`, en: `Buracona · Cape Verde's Blue Eye Cave in Sal`, pt: `Buracona · O Olho Azul de Cabo Verde no Sal` } as T,
-  description: { zh: `Buracona（蓝眼洞）完整指南：火山岩蓝洞的光学秘密、正午蓝光、落日之窗、开放时间 09:00–18:00、交通、真实评价与常见问题。`, en: `The complete guide to Buracona (Blue Eye Cave) in Sal, Cape Verde: the optics of the blue glow, midday light, the sunset window, hours 09:00–18:00, transport, real reviews and FAQ.`, pt: `O guia completo da Buracona (Olho Azul) no Sal, Cabo Verde: a ótica do azul, a luz do meio-dia, a janela do sol, horário 09:00–18:00, transporte, avaliações e FAQ.` } as T,
+  title: { zh: `Buracona · 蓝眼岩洞 — 佛得角萨尔岛的玄武岩海蚀洞`, en: `Buracona · Cape Verde's Blue Eye in Sal`, pt: `Buracona · O Olho Azul de Cabo Verde no Sal` } as T,
+  description: { zh: `Buracona（蓝眼岩洞）完整指南：玄武岩海岸裂隙与海蚀洞的光学秘密、正午蓝光、落日之窗、开放时间 09:00–18:00、交通、真实评价与常见问题。`, en: `The complete guide to Buracona (the Blue Eye) in Sal, Cape Verde: basalt sea caves, the optics of the blue glow, midday light, the sunset window, hours 09:00–18:00, transport, real reviews and FAQ.`, pt: `O guia completo da Buracona (Olho Azul) no Sal, Cabo Verde: grutas em basalto, a ótica do azul, a luz do meio-dia, a janela do sol, horário 09:00–18:00, transporte, avaliações e FAQ.` } as T,
 };

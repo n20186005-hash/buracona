@@ -4,10 +4,10 @@ interface Props { lang: Lang; }
 const { lang } = Astro.props;
 
 const descMap: Record<Lang, string> = {
-  zh: '佛得角萨尔岛帕尔梅拉附近的火山岩蓝洞（蓝眼洞），阳光透入海水在洞底折射出深邃蓝光，营业时间 09:00–18:00。',
-  en: 'A volcanic blue hole near Palmeira, Sal, Cape Verde — sunlight refracts through the seawater into an intense blue glow at the bottom of the cave. Open 09:00–18:00.',
-  cri: 'Um olho de água vulcânico perto de Palmeira, Sal, Cabo Verde — a luz do sol refrata na água do mar num azul intenso. Aberto 09:00–18:00.',
-  pt: 'Um olho de água vulcânico perto de Palmeira, Sal, Cabo Verde — a luz do sol refrata na água do mar num azul intenso no fundo da gruta. Aberto 09:00–18:00.',
+  zh: '佛得角萨尔岛帕尔梅拉附近的蓝眼岩洞（Olho Azul/Blue Eye），玄武岩海岸裂隙与海蚀洞形成的潮池系统。正午阳光透入海水，在洞底折射出深邃蓝光。营业时间 09:00–18:00。',
+  en: 'Buracona (Olho Azul / Blue Eye) near Palmeira, Sal, Cape Verde — a basalt sea-cave and tide-pool system where midday sunlight refracts through seawater into an intense blue glow. Open 09:00–18:00.',
+  cri: 'Buracona (Olho Azul / Blue Eye) perto de Palmeira, Sal, Cabo Verde — sistema di gruta di mar i poça di maré na basalto, undi luz di mei-dia ta refrata na água i ta da un azul forte. Abertu 09:00–18:00.',
+  pt: 'Buracona (Olho Azul / Blue Eye) perto de Palmeira, Sal, Cabo Verde — um sistema de gruta marinha e poça de maré em basalto onde a luz do meio-dia se refrata na água e cria um azul intenso. Aberto 09:00–18:00.',
 };
 
 const tourist = JSON.stringify({
@@ -26,7 +26,7 @@ const faqData = JSON.stringify({
     { '@type': 'Question', name: 'Is there an entrance fee?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Buracona is managed by a local community association; entry is paid and includes a local guide.' } },
     { '@type': 'Question', name: 'How do I get there?', acceptedAnswer: { '@type': 'Answer', text: 'From Santa Maria (~30 km) by taxi / aluguer or rental car; from Amílcar Cabral airport in Espargos (~20 km) by taxi or hired transfer.' } },
     { '@type': 'Question', name: 'When is the best time to visit?', acceptedAnswer: { '@type': 'Answer', text: 'Around midday for the famous Blue Eye glow, and late afternoon for the "Last Breath of the Sun" (Último Suspiro do Sol) sunset viewpoint.' } },
-    { '@type': 'Question', name: 'Is it safe to visit?', acceptedAnswer: { '@type': 'Answer', text: 'The ground is sharp volcanic lava — wear sturdy closed shoes, bring water and sun protection, and stay with your guide at all times.' } },
+    { '@type': 'Question', name: 'Is it safe to visit?', acceptedAnswer: { '@type': 'Answer', text: 'The ground is sharp, heat-holding basalt — wear sturdy closed shoes, bring water and sun protection, and stay with your guide at all times.' } },
   ],
 });
 ---

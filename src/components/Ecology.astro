@@ -57,12 +57,12 @@ const floraSpecies = ecology.species.slice(5);
                 <h4 class="font-display text-xl md:text-2xl inline">{_(sp.name)}</h4>
               </div>
             </div>
-            <p class="text-xs italic text-[color:var(--color-emerald)] mb-1">{sp.latin}</p>
+            <p class="science-only text-xs italic text-[color:var(--color-emerald)] mb-1">{sp.latin}</p>
             <div class="flex items-center gap-3 mb-4">
               <span class="text-xs px-2.5 py-0.5 rounded-full bg-[color:var(--color-mist)] text-[color:var(--color-moss)] border border-black/10">
                 {_(sp.niche)}
               </span>
-              <span class={`text-[10px] px-2 py-0.5 rounded-full font-semibold tracking-wide ${iucnColors[sp.iucn]}`}>
+              <span class={`science-only text-[10px] px-2 py-0.5 rounded-full font-semibold tracking-wide ${iucnColors[sp.iucn]}`}>
                 IUCN: {_(ecology[iucnLabels[sp.iucn] as keyof typeof ecology] as any)}
               </span>
             </div>
@@ -91,12 +91,12 @@ const floraSpecies = ecology.species.slice(5);
                 <h4 class="font-display text-lg inline">{_(sp.name)}</h4>
               </div>
             </div>
-            <p class="text-[11px] italic text-[color:var(--color-emerald)] mb-1">{sp.latin}</p>
+            <p class="science-only text-[11px] italic text-[color:var(--color-emerald)] mb-1">{sp.latin}</p>
             <div class="flex items-center gap-2 mb-3 flex-wrap">
               <span class="text-[11px] px-2 py-0.5 rounded-full bg-[color:var(--color-mist)] text-[color:var(--color-moss)] border border-black/10">
                 {_(sp.niche)}
               </span>
-              <span class={`text-[10px] px-2 py-0.5 rounded-full font-semibold tracking-wide ${iucnColors[sp.iucn]}`}>
+              <span class={`science-only text-[10px] px-2 py-0.5 rounded-full font-semibold tracking-wide ${iucnColors[sp.iucn]}`}>
                 IUCN: {_(ecology[iucnLabels[sp.iucn] as keyof typeof ecology] as any)}
               </span>
             </div>
@@ -125,11 +125,11 @@ const floraSpecies = ecology.species.slice(5);
             <div class="flex-1">
               <div class="flex items-start justify-between mb-2 flex-wrap gap-2">
                 <h4 class="font-display text-xl md:text-2xl">{_(sp.name)}</h4>
-                <span class={`text-[10px] px-2.5 py-1 rounded-full font-semibold tracking-wide ${iucnColors[sp.iucn]}`}>
+              <span class={`science-only text-[10px] px-2.5 py-1 rounded-full font-semibold tracking-wide ${iucnColors[sp.iucn]}`}>
                   IUCN: {_(ecology[iucnLabels[sp.iucn] as keyof typeof ecology] as any)}
                 </span>
               </div>
-              <p class="text-xs italic text-[color:var(--color-emerald)] mb-2">{sp.latin}</p>
+            <p class="science-only text-xs italic text-[color:var(--color-emerald)] mb-2">{sp.latin}</p>
               <span class="text-xs px-2.5 py-0.5 rounded-full bg-[color:var(--color-mist)] text-[color:var(--color-moss)] border border-black/10 inline-block mb-3">
                 {_(sp.niche)}
               </span>

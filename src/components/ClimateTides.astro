@@ -5,6 +5,7 @@ interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
 const LAT = 16.7519, LNG = -22.9375, TZ = 'Atlantic/Cape_Verde';
+const LOCALE = lang === 'zh' ? 'zh-CN' : (lang === 'pt' || lang === 'cri') ? 'pt-PT' : 'en-US';
 const labels = {
   rising: _(climate.rising), falling: _(climate.falling),
   nextHigh: _(climate.nextHigh), nextLow: _(climate.nextLow),
@@ -29,16 +30,36 @@ const labels = {
         <div class="text-sm text-[color:var(--color-moss)]/70 mt-2" id="ct-tide-sub">—</div>
       </div>
     </div>
+    <div class="mt-6 max-w-3xl mx-auto rounded-3xl bg-white p-8 border border-black/5">
+      <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{_(climate.timelineLabel)}</div>
+      <p class="mt-2 text-sm text-[color:var(--color-moss)]/70">{_(climate.timelineDesc)}</p>
+      <div class="mt-6 grid md:grid-cols-[1fr,220px] gap-8 items-center">
+        <div>
+          <div class="flex items-center justify-between gap-4 text-xs text-[color:var(--color-moss)]/70 flex-wrap">
+            <span>{_(climate.timelineTime)}: <span class="num-display" id="ct-time">12:00</span></span>
+            <span class="text-[color:var(--color-emerald)]">{_(climate.timelineBest)}</span>
+          </div>
+          <input id="ct-slider" type="range" min="8" max="16" step="0.25" value="12" class="w-full mt-4 accent-[color:var(--color-emerald)]" />
+          <div class="mt-4 h-2 rounded-full bg-[color:var(--color-mist)] overflow-hidden">
+            <div id="ct-fill" class="h-full bg-[color:var(--color-emerald)]" style="width:50%"></div>
+          </div>
+          <div class="mt-3 text-xs text-[color:var(--color-moss)]/70">{_(climate.timelineGlow)}: <span class="num-display" id="ct-glow">100%</span></div>
+        </div>
+        <div class="flex items-center justify-center">
+          <div id="ct-eye" class="w-44 h-44 rounded-full border border-black/10 overflow-hidden"></div>
+        </div>
+      </div>
+    </div>
     <div class="mt-6 text-center text-xs text-[color:var(--color-moss)]/50">{_(climate.source)}</div>
   </div>
 </section>
 
-<script define:vars={{ LAT, LNG, TZ, labels }}>
+<script define:vars={{ LAT, LNG, TZ, LOCALE, labels }}>
   (async () => {
     const sunEl = document.getElementById('ct-sun');
     const tideEl = document.getElementById('ct-tide');
     const subEl = document.getElementById('ct-tide-sub');
-    const fmt = (iso) => new Date(iso).toLocaleTimeString('zh-CN', { timeZone: TZ, hour: '2-digit', minute: '2-digit' });
+    const fmt = (iso) => new Date(iso).toLocaleTimeString(LOCALE, { timeZone: TZ, hour: '2-digit', minute: '2-digit', hour12: false });
     try {
       const [sunRes, tideRes] = await Promise.all([
         fetch(`https://api.sunrise-sunset.org/json?lat=${LAT}&lng=${LNG}&formatted=0`),
@@ -46,7 +67,7 @@ const labels = {
       ]);
       const sun = await sunRes.json();
       const tide = await tideRes.json();
-      const sunset = new Date(sun.results.sunset).toLocaleTimeString('zh-CN', { timeZone: TZ, hour: '2-digit', minute: '2-digit' });
+      const sunset = new Date(sun.results.sunset).toLocaleTimeString(LOCALE, { timeZone: TZ, hour: '2-digit', minute: '2-digit', hour12: false });
       const times = tide.hourly.time, vals = tide.hourly.sea_level_height_msl;
       const now = Date.now();
       let idx = 0, best = Infinity;
@@ -70,5 +91,38 @@ const labels = {
       tideEl.textContent = '';
       subEl.textContent = '';
     }
+  })();
+
+  (() => {
+    const slider = document.getElementById('ct-slider');
+    const timeEl = document.getElementById('ct-time');
+    const glowEl = document.getElementById('ct-glow');
+    const fillEl = document.getElementById('ct-fill');
+    const eyeEl = document.getElementById('ct-eye');
+    if (!slider || !timeEl || !glowEl || !fillEl || !eyeEl) return;
+    const clamp01 = (v) => Math.max(0, Math.min(1, v));
+    const fmtHM = (h) => {
+      const hh = Math.floor(h);
+      const mm = Math.round((h - hh) * 60);
+      return String(hh).padStart(2, '0') + ':' + String(mm).padStart(2, '0');
+    };
+    const intensityAt = (h) => {
+      const d = Math.abs(h - 12) / 4;
+      return clamp01(Math.cos(Math.min(1, d) * Math.PI / 2));
+    };
+    const render = () => {
+      const h = parseFloat(slider.value);
+      const x = (h - 8) / 8;
+      const intensity = intensityAt(h);
+      timeEl.textContent = fmtHM(h);
+      glowEl.textContent = Math.round(intensity * 100) + '%';
+      fillEl.style.width = Math.round(x * 100) + '%';
+      const blueA = 0.18 + intensity * 0.62;
+      const sunA = 0.08 + intensity * 0.16;
+      eyeEl.style.backgroundImage = `radial-gradient(circle at 35% 30%, rgba(232,177,75,${sunA}) 0%, rgba(47,107,78,0.10) 35%, rgba(0,120,255,${blueA}) 70%, rgba(237,243,239,1) 100%)`;
+      eyeEl.style.boxShadow = `inset 0 0 0 10px rgba(11,31,26,0.03), 0 18px 40px -26px rgba(11,31,26,0.35)`;
+    };
+    slider.addEventListener('input', render);
+    render();
   })();
 </script>

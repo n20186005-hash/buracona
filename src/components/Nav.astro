@@ -1,7 +1,7 @@
 ---
 import type { Lang } from '../i18n/utils';
 import { LANGUAGES, LANG_LABELS } from '../i18n/utils';
-import { nav } from '../i18n/translations';
+import { nav, viewMode } from '../i18n/translations';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
@@ -21,8 +21,36 @@ const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
       <a class="link-underline" href={`/${lang}/#reviews`}>{_(nav.reviews)}</a>
       <a class="link-underline" href={`/${lang}/#faq`}>{_(nav.faq)}</a>
     </nav>
-    <div class="flex items-center gap-1 text-xs bg-white/60 border border-black/10 rounded-full p-1">
-      {LANGUAGES.map((l) => <a href={`/${l}/`} class={`lang-btn px-2.5 py-1 rounded-full ${l === lang ? 'active' : ''}`}>{LANG_LABELS[l]}</a>)}
+    <div class="flex items-center gap-2">
+      <div class="flex items-center gap-1 text-xs bg-white/60 border border-black/10 rounded-full p-1" id="mode-toggle">
+        <button type="button" class="mode-btn px-2.5 py-1 rounded-full" data-mode="tourist">{_(viewMode.tourist)}</button>
+        <button type="button" class="mode-btn px-2.5 py-1 rounded-full" data-mode="science">{_(viewMode.science)}</button>
+      </div>
+      <div class="flex items-center gap-1 text-xs bg-white/60 border border-black/10 rounded-full p-1">
+        {LANGUAGES.map((l) => <a href={`/${l}/`} class={`lang-btn px-2.5 py-1 rounded-full ${l === lang ? 'active' : ''}`}>{LANG_LABELS[l]}</a>)}
+      </div>
     </div>
   </div>
 </header>
+
+<script>
+  (() => {
+    const KEY = 'buracona:view-mode';
+    const root = document.body;
+    const wrap = document.getElementById('mode-toggle');
+    if (!wrap) return;
+    const btns = Array.from(wrap.querySelectorAll('button[data-mode]'));
+    const setMode = (mode) => {
+      root.dataset.mode = mode;
+      btns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-mode') === mode));
+      try { localStorage.setItem(KEY, mode); } catch {}
+    };
+    const init = () => {
+      let mode = 'tourist';
+      try { mode = localStorage.getItem(KEY) || mode; } catch {}
+      setMode(mode);
+    };
+    init();
+    btns.forEach((b) => b.addEventListener('click', () => setMode(b.getAttribute('data-mode'))));
+  })();
+</script>

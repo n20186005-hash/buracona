@@ -27,6 +27,12 @@ body { font-family: var(--font-body); background-color: var(--color-cream); colo
 details[open] .faq-plus { transform: rotate(45deg); }
 .faq-plus { transition: transform .25s; }
 .lang-btn.active { background: var(--color-ink); color: var(--color-cream); }
+.mode-btn.active { background: var(--color-emerald); color: var(--color-cream); }
+.mode-btn { color: var(--color-moss); }
+.mode-btn:hover { background: rgba(47,107,78,.12); }
+.science-only { display: block; }
+body[data-mode="tourist"] .science-only { display: none !important; }
+body[data-mode="science"] .tourist-only { display: none !important; }
 .num-display { font-family: var(--font-display); font-weight: 600; letter-spacing: -.02em; }
 /* Partner links */
 .partner-abbr { font-variant: small-caps; letter-spacing: 0.15em; }
