@@ -1,33 +1,66 @@
 ---
 import type { Lang } from '../i18n/utils';
+import { faq } from '../i18n/translations';
+import { SITE } from '../data/site';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+
 const descMap: Record<Lang, string> = {
-  zh: '佛得角萨尔岛帕尔梅拉附近的蓝眼岩洞（Olho Azul/Blue Eye），玄武岩海岸裂隙与海蚀洞形成的潮池系统。正午阳光透入海水，在洞底折射出深邃蓝光。营业时间 09:00–18:00。',
-  en: 'Buracona (Olho Azul / Blue Eye) near Palmeira, Sal, Cape Verde — a basalt sea-cave and tide-pool system where midday sunlight refracts through seawater into an intense blue glow. Open 09:00–18:00.',
-  cri: 'Buracona (Olho Azul / Blue Eye) perto de Palmeira, Sal, Cabo Verde — sistema di gruta di mar i poça di maré na basalto, undi luz di mei-dia ta refrata na água i ta da un azul forte. Abertu 09:00–18:00.',
-  pt: 'Buracona (Olho Azul / Blue Eye) perto de Palmeira, Sal, Cabo Verde — um sistema de gruta marinha e poça de maré em basalto onde a luz do meio-dia se refrata na água e cria um azul intenso. Aberto 09:00–18:00.',
+  zh: 'Buracona - Blue Eye Cave（蓝眼岩洞 / Olho Azul）位于佛得角萨尔岛 Palmeira 的玄武岩海蚀洞与潮汐蓝池，正午阳光折射出深蓝光，每日 09:00–18:00 开放。',
+  en: 'Buracona - Blue Eye Cave near Palmeira, Sal, Cape Verde — a basalt sea-cave and tide-pool system where midday sunlight refracts through seawater into an intense blue glow. Open 09:00–18:00.',
+  cri: 'Buracona - Blue Eye Cave perto de Palmeira, Sal, Cabo Verde — sistema di gruta di mar i poça di maré na basalto, undi luz di mei-dia ta refrata na água i ta da un azul forte. Abertu 09:00–18:00.',
+  pt: 'Buracona - Blue Eye Cave perto de Palmeira, Sal, Cabo Verde — um sistema de gruta marinha e poça de maré em basalto onde a luz do meio-dia se refrata na água e cria um azul intenso. Aberto 09:00–18:00.',
 };
 
+const url = new URL(Astro.url.pathname, Astro.site).href;
+
 const tourist = JSON.stringify({
-  '@context': 'https://schema.org', '@type': 'TouristAttraction',
-  name: 'Buracona - Blue Eye Cave', description: descMap[lang],
-  image: new URL('/gallery/buracona-blue-eye-cave-1.jpg', Astro.site).href,
-  address: { '@type': 'PostalAddress', streetAddress: '', addressLocality: 'Palmeira', addressRegion: 'Sal', postalCode: '', addressCountry: 'CV' },
-  geo: { '@type': 'GeoCoordinates', latitude: 16.7519, longitude: -22.9375 },
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.3', reviewCount: '4750' },
-  openingHours: 'Mo-Su 09:00-18:00',
+  '@context': 'https://schema.org',
+  '@type': 'TouristAttraction',
+  '@id': `${SITE.domain}/#attraction`,
+  name: SITE.attractionFullName,
+  alternateName: [SITE.attractionShortName, `${SITE.city} ${SITE.attractionFullName}`],
+  description: descMap[lang],
+  url,
+  image: [new URL(SITE.heroImage, Astro.site).href],
+  isAccessibleForFree: false,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: SITE.attractionFullName,
+    addressLocality: SITE.city,
+    addressRegion: SITE.region,
+    postalCode: SITE.postalCode,
+    addressCountry: SITE.countryCode,
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: SITE.latitude, longitude: SITE.longitude },
+  openingHours: SITE.openingHours,
+  hasMap: SITE.mapsShareUrl,
+  sameAs: [SITE.mapsShareUrl, SITE.govTourismUrl],
 });
 
+// FAQPage built from the localized faq.items (HTML stripped for plain-text answers)
+const stripHtml = (s: string) => s.replace(/<br\s*\/?>/gi, ' ').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 const faqData = JSON.stringify({
-  '@context': 'https://schema.org', '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: 'Is there an entrance fee?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Buracona is managed by a local community association; entry is paid and includes a local guide.' } },
-    { '@type': 'Question', name: 'How do I get there?', acceptedAnswer: { '@type': 'Answer', text: 'From Santa Maria (~30 km) by taxi / aluguer or rental car; from Amílcar Cabral airport in Espargos (~20 km) by taxi or hired transfer.' } },
-    { '@type': 'Question', name: 'When is the best time to visit?', acceptedAnswer: { '@type': 'Answer', text: 'Around midday for the famous Blue Eye glow, and late afternoon for the "Last Breath of the Sun" (Último Suspiro do Sol) sunset viewpoint.' } },
-    { '@type': 'Question', name: 'Is it safe to visit?', acceptedAnswer: { '@type': 'Answer', text: 'The ground is sharp, heat-holding basalt — wear sturdy closed shoes, bring water and sun protection, and stay with your guide at all times.' } },
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.items.map((item) => ({
+    '@type': 'Question',
+    name: _(item.q),
+    acceptedAnswer: { '@type': 'Answer', text: stripHtml(_(item.a)) },
+  })),
+});
+
+const breadcrumb = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: SITE.country, item: `https://${SITE.domain}` },
+    { '@type': 'ListItem', position: 2, name: SITE.region, item: `https://${SITE.domain}` },
+    { '@type': 'ListItem', position: 3, name: SITE.city, item: `https://${SITE.domain}` },
+    { '@type': 'ListItem', position: 4, name: SITE.attractionFullName, item: url },
   ],
 });
 ---
-<Fragment set:html={'<script type="application/ld+json">' + tourist + '</script><script type="application/ld+json">' + faqData + '</script>'} />
+<Fragment set:html={'<script type="application/ld+json">' + tourist + '</script><script type="application/ld+json">' + faqData + '</script><script type="application/ld+json">' + breadcrumb + '</script>'} />

@@ -1,6 +1,7 @@
 ---
 import type { Lang } from '../i18n/utils';
 import { gallery } from '../i18n/translations';
+import { SITE } from '../data/site';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
@@ -19,13 +20,13 @@ const bento = [
 <section id="gallery" class="bg-[color:var(--color-ink)] text-white py-24 md:py-32 grain">
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex items-end justify-between flex-wrap gap-6 mb-14">
-      <div><div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-sun)]">06 — {_(gallery.sectionNum)}</div>
+      <div><div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-sun)]">08 — {_(gallery.sectionNum)}</div>
       <h2 class="font-display text-4xl md:text-6xl mt-4">{_(gallery.heading)}</h2></div>
     </div>
     <div class="grid grid-cols-12 gap-3 md:gap-4">
       {imgs.map((src, i) => (
         <figure class={`${bento[i] || 'col-span-6 aspect-[4/3]'} rounded-2xl overflow-hidden`}>
-          <img loading="lazy" alt={`Buracona — Blue Eye Cave — gallery photo ${i + 1}`} class="w-full h-full object-cover hover:scale-105 transition duration-700" src={src} />
+          <img loading="lazy" alt={`${SITE.attractionFullName} (${SITE.city}, ${SITE.country}) — photo ${i + 1}`} class="w-full h-full object-cover hover:scale-105 transition duration-700" src={src} />
         </figure>
       ))}
     </div>

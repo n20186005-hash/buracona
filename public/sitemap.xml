@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://buracona.com/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://buracona.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://buracona.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://buracona.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="cri" href="https://buracona.com/cri/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://buracona.com/pt/"/>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://buracona.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://buracona.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://buracona.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://buracona.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="cri" href="https://buracona.com/cri/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://buracona.com/pt/"/>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://buracona.com/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://buracona.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://buracona.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://buracona.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="cri" href="https://buracona.com/cri/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://buracona.com/pt/"/>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://buracona.com/cri/</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://buracona.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://buracona.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://buracona.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="cri" href="https://buracona.com/cri/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://buracona.com/pt/"/>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://buracona.com/pt/privacy/</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://buracona.com/en/privacy/</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://buracona.com/zh/privacy/</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://buracona.com/cri/privacy/</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://buracona.com/pt/terms/</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://buracona.com/en/terms/</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://buracona.com/zh/terms/</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://buracona.com/cri/terms/</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://buracona.com/pt/cookies/</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://buracona.com/en/cookies/</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://buracona.com/zh/cookies/</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://buracona.com/cri/cookies/</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>

@@ -1,0 +1,36 @@
+---
+import type { Lang } from '../i18n/utils';
+import { sources, locationMap } from '../i18n/translations';
+import { SITE } from '../data/site';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+const gmapsUrl = SITE.mapsShareUrl;
+---
+<section id="sources" class="bg-[color:var(--color-ink)] text-[color:var(--color-cream)] py-24 md:py-32">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-sun)] text-center">12 — {_(sources.heading)}</div>
+    <h2 class="font-display text-4xl md:text-6xl mt-4 text-center mb-8">{_(sources.heading)}</h2>
+    <p class="text-center text-white/60 max-w-2xl mx-auto mb-14 leading-relaxed">{_(sources.intro)}</p>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <!-- Ratings -->
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+        <div class="text-xs uppercase tracking-widest text-[color:var(--color-sun)] mb-3">{_(sources.ratingTitle)}</div>
+        <p class="text-sm text-white/75 leading-relaxed">{_(sources.ratingNote)}</p>
+        <div class="text-white/50 text-xs mt-3">{_(sources.ratingSynced)}</div>
+        <a href={gmapsUrl} target="_blank" rel="noopener noreferrer" class="link-underline text-[color:var(--color-sun)] text-sm mt-3 inline-block">Google Maps →</a>
+      </div>
+      <!-- Official partners -->
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+        <div class="text-xs uppercase tracking-widest text-[color:var(--color-sun)] mb-3">{_(sources.partnersTitle)}</div>
+        <a href={SITE.govTourismUrl} target="_blank" rel="noopener noreferrer" class="link-underline text-white/80 text-sm leading-relaxed inline-block">{_(locationMap.govLinkText)} →</a>
+      </div>
+      <!-- Climate & tide data -->
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+        <div class="text-xs uppercase tracking-widest text-[color:var(--color-sun)] mb-3">{_(sources.weatherTitle)}</div>
+        <p class="text-sm text-white/75 leading-relaxed">{_(sources.weatherNote)}</p>
+      </div>
+    </div>
+  </div>
+</section>

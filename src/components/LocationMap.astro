@@ -1,0 +1,60 @@
+---
+import type { Lang } from '../i18n/utils';
+import { locationMap } from '../i18n/translations';
+import { SITE } from '../data/site';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+const coords = `${SITE.latitude.toFixed(5)}° N, ${Math.abs(SITE.longitude).toFixed(5)}° W`;
+---
+<section id="location" class="max-w-7xl mx-auto px-6 py-24 md:py-32">
+  <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">06 — {_(locationMap.sectionNum)}</div>
+  <h2 class="font-display text-4xl md:text-6xl mt-4 mb-8" set:html={_(locationMap.heading)} />
+  <p class="max-w-3xl text-[color:var(--color-moss)]/80 leading-relaxed mb-14">{_(locationMap.intro)}</p>
+
+  <div class="grid md:grid-cols-12 gap-8 items-start">
+    <!-- Detail column -->
+    <div class="md:col-span-4 space-y-6">
+      <div class="rounded-3xl bg-white border border-black/5 p-6">
+        <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{_(locationMap.coordsLabel)}</div>
+        <div class="font-display text-2xl mt-2 text-[color:var(--color-ink)]">{coords}</div>
+      </div>
+      <div class="rounded-3xl bg-white border border-black/5 p-6 space-y-4">
+        <div>
+          <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{_(locationMap.plusCodeLabel)}</div>
+          <a href={SITE.mapsShareUrl} target="_blank" rel="noopener noreferrer" class="link-underline text-[color:var(--color-moss)] font-medium mt-1 inline-block">{SITE.plusCode}</a>
+        </div>
+        <div>
+          <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)]">{_(locationMap.plusCodeEyeLabel)}</div>
+          <a href={SITE.mapsEyeUrl} target="_blank" rel="noopener noreferrer" class="link-underline text-[color:var(--color-moss)] font-medium mt-1 inline-block">{SITE.plusCodeEye}</a>
+        </div>
+        <a href={SITE.mapsShareUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-[color:var(--color-emerald)]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          {_(locationMap.openInMaps)}
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="rounded-3xl bg-[color:var(--color-mist)] border border-black/10 p-6">
+        <div class="text-xs uppercase tracking-widest text-[color:var(--color-emerald)] mb-2">{_(locationMap.govLabel)}</div>
+        <p class="text-sm text-[color:var(--color-moss)] leading-relaxed">{_(locationMap.govText)}</p>
+        <a href={SITE.govTourismUrl} target="_blank" rel="noopener noreferrer" class="link-underline text-[color:var(--color-emerald)] text-sm font-medium mt-3 inline-block">{_(locationMap.govLinkText)} →</a>
+      </div>
+    </div>
+
+    <!-- Map column -->
+    <div class="md:col-span-8">
+      <div class="rounded-3xl overflow-hidden border border-black/5 shadow-xl">
+        <iframe
+          src={SITE.mapsEmbedSrc}
+          width="100%"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title={`${SITE.attractionFullName} — Google Maps`}
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>

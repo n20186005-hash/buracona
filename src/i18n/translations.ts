@@ -27,9 +27,9 @@ export const viewMode = {
 // ── Hero ──
 export const hero = {
   title: {
-    zh: `佛得角的<br/><span class="italic text-[color:var(--color-sun)]">蓝眼岩洞</span>`,
-    en: `Cape Verde's<br/><span class="italic text-[color:var(--color-sun)]">Blue Eye</span>`,
-    pt: `O <span class="italic text-[color:var(--color-sun)]">Olho Azul</span><br/>de Cabo Verde`,
+    zh: `Buracona 蓝眼岩洞<br/><span class="italic text-[color:var(--color-sun)]">Blue Eye Cave · Palmeira</span>`,
+    en: `Buracona - Blue Eye Cave<br/><span class="italic text-[color:var(--color-sun)]">Palmeira · Sal · Cape Verde</span>`,
+    pt: `Buracona - Blue Eye Cave<br/><span class="italic text-[color:var(--color-sun)]">Palmeira · Sal · Cabo Verde</span>`,
   } as T,
   subtitle: {
     zh: `Buracona · 萨尔岛帕尔梅拉附近的玄武岩裂隙蓝眼岩洞 —— 阳光穿过海水，在洞底折射出深邃的蓝光，是佛得角最神秘的自然奇景之一。`,
@@ -53,20 +53,38 @@ export const hero = {
     en: [`Marine reserve nearby`, `Underwater cave 22m`, `Basalt landscape`, `Avoid crowds`],
     pt: [`Reserva marinha perto`, `Caverna 22m`, `Paisagem basáltica`, `Evite multidões`],
   } as T,
+  // 4.2 地理面包屑 / breadcrumb
+  breadcrumb: {
+    zh: `Buracona - Blue Eye Cave → Palmeira → Sal → 佛得角`,
+    en: `Buracona - Blue Eye Cave → Palmeira → Sal → Cape Verde`,
+    pt: `Buracona - Blue Eye Cave → Palmeira → Sal → Cabo Verde`,
+  } as T,
+  // 评分同步来源小字（H1 下方）
+  ratingSource: {
+    zh: `评分与评价数同步自谷歌地图（Google Maps）用户评价 · 2026 年 9 月 · 点击查看谷歌地图全部评价↗`,
+    en: `Ratings & review counts synced from Google Maps user reviews · September 2026 · View all Google Maps reviews ↗`,
+    pt: `Classificações e número de avaliações sincronizados das avaliações de utilizadores do Google Maps · setembro de 2026 · Ver todas as avaliações no Google Maps ↗`,
+  } as T,
 };
 
 // ── Manifesto (网站前言) ──
 export const manifesto = {
   sectionNum: { zh: `前言`, en: `Preamble`, pt: `Preâmbulo` } as T,
   heading: {
-    zh: `一汪蓝，<br/><em class="text-[color:var(--color-emerald)]">半座岛的秘境</em>`,
-    en: `One blue pool.<br/><em class="text-[color:var(--color-emerald)]">Half an island's secret.</em>`,
-    pt: `Uma poça azul.<br/><em class="text-[color:var(--color-emerald)]">Metade do segredo da ilha.</em>`,
+    zh: `关于<br/><em class="text-[color:var(--color-emerald)]">Buracona 蓝眼岩洞</em>`,
+    en: `About<br/><em class="text-[color:var(--color-emerald)]">Buracona - Blue Eye Cave</em>`,
+    pt: `Sobre<br/><em class="text-[color:var(--color-emerald)]">Buracona - Blue Eye Cave</em>`,
   } as T,
   subheading: {
     zh: `致每一位抵达萨尔岛的旅人`,
     en: `To every traveller who reaches Sal`,
     pt: `A todo viajante que chega a Sal`,
+  } as T,
+  // 4.1 首段等位声明（域名含义 = 官方全称）
+  equiv: {
+    zh: `欢迎来到 <strong>Buracona - Blue Eye Cave</strong>（即蓝眼岩洞 / Olho Azul），它更广为人知的名字，正是 <strong>Buracona（蓝眼）</strong>。它坐落于 <strong>Palmeira</strong>、<strong>Sal</strong>、<strong>佛得角（Cabo Verde）</strong> 的西北荒野，是旅人深入这片火山海岸前必抵的核心地标。`,
+    en: `Welcome to <strong>Buracona - Blue Eye Cave</strong>, widely recognized as the central <strong>Buracona (Blue Eye)</strong>. Located in the heart of <strong>Palmeira</strong>, <strong>Sal</strong>, <strong>Cape Verde</strong>, this destination serves as a primary hub for travelers visiting the region.`,
+    pt: `Bem-vindo à <strong>Buracona - Blue Eye Cave</strong>, amplamente reconhecida como o central <strong>Buracona (Olho Azul)</strong>. Localizada no coração de <strong>Palmeira</strong>, <strong>Sal</strong>, <strong>Cabo Verde</strong>, este destino é o principal polo para quem visita a região.`,
   } as T,
   p1: {
     zh: `欢迎来到 Buracona。在佛得角克里奥尔语中，"Buracona" 意为"大洞"——这片由玄武岩裂隙裂开、又被海水灌入的天然蓝眼岩洞，藏在萨尔岛西北角的荒原之中。阳光从洞口斜射而入，穿过澄澈的海水，在洞底投射出一束摄人心魄的蓝光，当地人称之为"Olho Azul"（蓝眼）。`,
@@ -144,7 +162,7 @@ export const practical = {
 // ── Transport ──
 export const transport = {
   sectionNum: { zh: `交通指南`, en: `Transport`, pt: `Transporte` } as T,
-  heading: { zh: `三种方式<br/><em class="text-[color:var(--color-emerald)]">到达蓝眼岩洞</em>`, en: `Three ways<br/><em class="text-[color:var(--color-emerald)]">to arrive</em>`, pt: `Três formas<br/><em class="text-[color:var(--color-emerald)]">de chegar</em>` } as T,
+  heading: { zh: `如何抵达<br/><em class="text-[color:var(--color-emerald)]">Palmeira 的 Buracona 蓝眼岩洞</em>`, en: `Location & How to Visit<br/><em class="text-[color:var(--color-emerald)]">Buracona (Blue Eye) in Palmeira</em>`, pt: `Como Chegar & Visitar<br/><em class="text-[color:var(--color-emerald)]">Buracona (Olho Azul) em Palmeira</em>` } as T,
   subtitle: { zh: `Buracona 位于萨尔岛西北角的荒原，距主镇 Santa Maria 约 30 公里，无公交直达，建议租车、包车或参加一日游。`, en: `Buracona sits in the wild northwest of Sal, about 30 km from the main town Santa Maria. There is no direct bus — rent a car, hire a taxi, or join a day tour.`, pt: `A Buracona fica no sertão noroeste do Sal, a cerca de 30 km da vila de Santa Maria. Não há autocarro direto — alugue carro, táxi ou junte-se a um passeio.` } as T,
   items: [
     { icon: '🚕', title: { zh: `从 Santa Maria 包车 / 出租车`, en: `From Santa Maria by taxi`, pt: `De Santa Maria de táxi` } as T, meta: '~30 km · 45–50 min', details: [{ icon: '🚖', text: { zh: `<strong>出租车 / Aluguer</strong> · 岛上的共享出租车（aluguer）或包车从 Santa Maria 出发，沿 EN1 向北再转西抵达 Buracona。最后一段常为非铺装土路（off-road），颠簸且需慢行，整体约 45–50 分钟。`, en: `<strong>Taxi / Aluguer</strong> · Shared aluguers or a private taxi from Santa Maria go north on the EN1 and then west to Buracona. The last stretch is often unpaved (off-road), so the full ride is typically 45–50 min.`, pt: `<strong>Táxi / Aluguer</strong> · Aluguers partilhados ou táxi privado de Santa Maria seguem norte pela EN1 e depois oeste até a Buracona. O último trecho é muitas vezes de terra (off-road), por isso o total costuma ser 45–50 min.` } as T }, { icon: '🗺️', text: { zh: `<strong>一日游</strong> · 多数旅行社提供"蓝眼岩洞 + 盐湖 Pedra de Lume + 沙丘"环岛线路，含门票与向导。`, en: `<strong>Day tour</strong> · Most agencies run an island loop "Blue Eye + Pedra de Lume salt lake + dunes" with entry and guide included.`, pt: `<strong>Passeio</strong> · A maioria das agências faz o circuito "Olho Azul + salinas de Pedra de Lume + dunas" com entrada e guia.` } as T }] },
@@ -156,7 +174,7 @@ export const transport = {
 // ── Encyclopedia ──
 export const encyclopedia = {
   sectionNum: { zh: `深度百科`, en: `Encyclopedia`, pt: `Enciclopédia` } as T,
-  heading: { zh: `名字、光与<em class="text-[color:var(--color-emerald)]">一座岛的荒野</em>`, en: `Name, light &amp;<br/><em class="text-[color:var(--color-emerald)]"> an island's wild</em>`, pt: `Nome, luz e<br/><em class="text-[color:var(--color-emerald)]"> o sertão de uma ilha</em>` } as T,
+  heading: { zh: `历史与意义<br/><em class="text-[color:var(--color-emerald)]">Buracona 蓝眼岩洞</em>`, en: `History &amp; Significance<br/><em class="text-[color:var(--color-emerald)]">of Buracona - Blue Eye Cave</em>`, pt: `História &amp; Importância<br/><em class="text-[color:var(--color-emerald)]">da Buracona - Blue Eye Cave</em>` } as T,
   subtitle: {
     zh: `从玄武岩海岸的裂隙与海蚀洞，到正午那束蓝光，再到当地人送别太阳的岩台——这片荒地背后，藏着萨尔岛几段关键的自然记忆。`,
     en: `From fissures and sea caves carved into basalt, to the beam of blue at noon, to the ledge where locals bid the sun farewell — behind this wilderness lie key memories of Sal.`,
@@ -287,8 +305,14 @@ export const gallery = {
 // ── Reviews ──
 export const reviews = {
   sectionNum: { zh: `游客评价`, en: `Reviews`, pt: `Avaliações` } as T,
-  heading: { zh: `4.3<span class="text-[color:var(--color-emerald)]">/5</span> · 来自 4,750 位旅行者`, en: `4.3<span class="text-[color:var(--color-emerald)]">/5</span> · from 4,750 travelers`, pt: `4.3<span class="text-[color:var(--color-emerald)]">/5</span> · de 4.750 viajantes` } as T,
-  viewMoreReviews: { zh: `在 Google 地图上查看更多评价`, en: `View more reviews on Google Maps`, pt: `Ver mais avaliações no Google Maps` } as T,
+  heading: { zh: `4.3<span class="text-[color:var(--color-emerald)]">/5</span> · 来自 4,858 位旅行者`, en: `4.3<span class="text-[color:var(--color-emerald)]">/5</span> · from 4,858 travelers`, pt: `4.3<span class="text-[color:var(--color-emerald)]">/5</span> · de 4.858 viajantes` } as T,
+  // 评价来源说明（区块内）
+  sourceNote: {
+    zh: `同步自 Google 地图用户评价，同步时间 2026 年 9 月；版权归原作者与 Google 地图所有`,
+    en: `Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.`,
+    pt: `Sincronizado a partir das avaliações de utilizadores do Google Maps, sincronizado em setembro de 2026; os direitos de autor pertencem aos autores originais e ao Google Maps.`,
+  } as T,
+  viewMoreReviews: { zh: `在谷歌地图查看全部评价`, en: `View all reviews on Google Maps`, pt: `Ver todas as avaliações no Google Maps` } as T,
   items: [
     { stars: '★★★★★', date: '2026-06', title: { zh: `"科普模式看懂了蓝光"`, en: `"Now I understand the blue"`, pt: `"Agora entendo o azul"` } as T, desc: { zh: `以前只知道“正午最蓝”，这次跟着向导又看了网站的科普解释，才明白是水对红光吸收更强、加上裂隙反射造成的。看懂之后反而更震撼。`, en: `I always heard “noon is bluest”. With the guide + the science notes here, I finally understood the optics — and it made the view even more powerful.`, pt: `Eu só sabia “ao meio-dia é mais azul”. Com o guia e as notas de ciência aqui, entendi a ótica — e fiquei ainda mais impressionado.` } as T, author: 'Aya K. · 🧭 · 🇯🇵' },
     { stars: '★★★★★', date: '2026-02', title: { zh: `"路况比想象颠簸"`, en: `"Bumpier road than expected"`, pt: `"Estrada mais esburacada"` } as T, desc: { zh: `从 Santa Maria 过来最后一段土路真的很颠，但景色超值。建议早点出发，正午看蓝眼、傍晚去落日之窗，一天安排刚好。`, en: `The last unpaved stretch from Santa Maria is genuinely bumpy, but the payoff is huge. Start early: Blue Eye at noon, sunset window later — perfect day.`, pt: `O último trecho de terra desde Santa Maria é mesmo esburacado, mas vale muito. Saia cedo: Olho Azul ao meio-dia e pôr do sol depois.` } as T, author: 'Nuno P. · 🇵🇹' },
@@ -304,7 +328,13 @@ export const reviews = {
 // ── Surrounding ──
 export const surrounding = {
   sectionNum: { zh: `周边联动`, en: `Nearby`, pt: `Arredores` } as T,
-  heading: { zh: `还可以<em class="text-[color:var(--color-emerald)]">连着玩</em>`, en: `Extend the trip<em class="text-[color:var(--color-emerald)]"> further</em>`, pt: `Estenda a viagem<em class="text-[color:var(--color-emerald)]"> ainda mais</em>` } as T,
+  heading: { zh: `周边景点<br/><em class="text-[color:var(--color-emerald)]">Buracona 蓝眼岩洞联动</em>`, en: `Landmarks &amp; Attractions<br/><em class="text-[color:var(--color-emerald)]">Around Buracona (Blue Eye)</em>`, pt: `Pontos &amp; Atrações<br/><em class="text-[color:var(--color-emerald)]">em redor de Buracona (Olho Azul)</em>` } as T,
+  // 4.3 周边语义集群
+  intro: {
+    zh: `到访 <strong>Buracona - Blue Eye Cave</strong> 时，旅人往往顺道探索萨尔岛上的其他地标——尤其是度假小镇 <strong>Santa Maria</strong> 与东部的盐湖 <strong>Pedra de Lume</strong>，二者常与蓝眼岩洞组成同一日游线路。`,
+    en: `When visiting <strong>Buracona - Blue Eye Cave</strong>, travelers often explore other landmarks across Sal — especially the resort town <strong>Santa Maria</strong> and the salt lake <strong>Pedra de Lume</strong> to the east, which are commonly paired with the Blue Eye on the same day tour.`,
+    pt: `Ao visitar a <strong>Buracona - Blue Eye Cave</strong>, os viajantes exploram outras atrações do Sal — especialmente a vila turística <strong>Santa Maria</strong> e as salinas de <strong>Pedra de Lume</strong> a leste, frequentemente unidas ao Olho Azul no mesmo passeio.`,
+  } as T,
   items: [
     { img: '/gallery/buracona-blue-eye-cave-9.jpg', title: '🏖️ Santa Maria', desc: { zh: `萨尔岛最大的度假小镇，绵延的金色沙滩与风帆冲浪闻名。多数游客以此为基地，包车北上前往 Buracona 约 30 公里。`, en: `Sal's main resort town — long golden beaches and windsurfing. Most visitors base here and drive ~30 km north to Buracona.`, pt: `A principal vila turística do Sal — praias douradas e windsurf. A maioria baseia aqui e vai ~30 km norte até a Buracona.` } as T },
     { img: '/gallery/buracona-blue-eye-cave-11.jpg', title: '🧂 Pedra de Lume 盐湖', desc: { zh: `岛东部的废弃盐矿，高盐度湖水让人轻松漂浮，号称"佛得角的死海"。常与蓝眼岩洞安排在同一日游线路中。`, en: `An abandoned salt mine in the east of the island; its hyper-saline water lets you float effortlessly — the "Dead Sea of Cape Verde". Often paired with Buracona on the same tour.`, pt: `Minas de sal abandonadas a leste; a água hiper-salina faz flutuar sem esforço — o "Mar Morto de Cabo Verde". Muitas vezes junto com a Buracona no mesmo passeio.` } as T },
@@ -448,6 +478,30 @@ export const faq = {
         pt: `O chão é <strong>basalto</strong> afiado e quente — use calçado fechado e resistente, leve água e protetor solar, e fique com o guia. Não suba nas grades nem mergulhe.`,
       } as T,
     },
+    {
+      q: { zh: `蓝眼可以下水游泳吗？`, en: `Can you swim in the Blue Eye?`, pt: `Dá para nadar no Olho Azul?` } as T,
+      a: {
+        zh: `蓝眼是一处深约 22 米的海蚀洞，洞口狭小、禁止跳水，通常不可下水；但景点内另有一处开放的火山岩潮池，可浮潜与戏水（请听从向导安排）。`,
+        en: `The Blue Eye is a sea cave about 22 m deep with a narrow mouth and no jumping — swimming there is not allowed. But the site has an open volcanic tide pool where you can snorkel and paddle (follow your guide's lead).`,
+        pt: `O Olho Azul é uma gruta marinha de ~22 m com boca estreita e sem salto — não se nada lá. Mas o local tem uma poça de maré vulcânica aberta onde se pode mergulhar de snorkel (siga o guia).`,
+      } as T,
+    },
+    {
+      q: { zh: `Buracona 在哪里？`, en: `Where is Buracona located?`, pt: `Onde fica a Buracona?` } as T,
+      a: {
+        zh: `Buracona - Blue Eye Cave 位于佛得角萨尔岛西北部的 Palmeira 附近，约在 Santa Maria 以北 30 公里、Espargos 机场以西 20 公里。地理坐标约为 16.79889° N, 22.99167° W。`,
+        en: `Buracona - Blue Eye Cave is near Palmeira in the northwest of Sal, Cape Verde — about 30 km north of Santa Maria and 20 km west of Espargos airport. Coordinates are roughly 16.79889° N, 22.99167° W.`,
+        pt: `A Buracona - Blue Eye Cave fica perto de Palmeira, no noroeste do Sal, Cabo Verde — cerca de 30 km norte de Santa Maria e 20 km oeste do aeroporto de Espargos. Coordenadas aprox. 16,79889° N, 22,99167° W.`,
+      } as T,
+    },
+    {
+      q: { zh: `Buracona（蓝眼）是免费的吗？`, en: `Is Buracona (Blue Eye) free to visit?`, pt: `A Buracona (Olho Azul) é gratuita?` } as T,
+      a: {
+        zh: `不是完全免费的公共海滩，而是受社区协会管理的收费景点，需购票并由当地向导陪同进入。门票包含向导讲解，建议备好现金（欧元或埃斯库多）。`,
+        en: `No — it is a paid attraction managed by a local community association, with tickets that include a guide. Bring cash (euros or Cape Verdean escudos); the fee supports the local community that looks after the site.`,
+        pt: `Não — é uma atração paga gerida por uma associação comunitária, com bilhete que inclui guia. Leve dinheiro (euros ou escudos); a taxa apoia a comunidade local que cuida do local.`,
+      } as T,
+    },
   ],
 };
 
@@ -579,6 +633,11 @@ export const footer = {
   terms: { zh: `服务条款`, en: `Terms of Service`, pt: `Termos de Serviço` } as T,
   cookies: { zh: `Cookie 设置`, en: `Cookie Settings`, pt: `Configurações de Cookies` } as T,
   leaveNoTrace: { zh: `游览公约`, en: `Visitor Code`, pt: `Código do Visitante` } as T,
+  ratingSource: {
+    zh: `评分与评价数同步自谷歌地图（Google Maps）用户评价 · 2026 年 9 月`,
+    en: `Ratings & review counts synced from Google Maps user reviews · September 2026`,
+    pt: `Classificações e número de avaliações sincronizados do Google Maps · setembro de 2026`,
+  } as T,
 };
 
 // ── Privacy Policy Page ──
@@ -691,6 +750,178 @@ export const cookies = {
 
 // ── Meta ──
 export const meta = {
-  title: { zh: `Buracona · 蓝眼岩洞 — 佛得角萨尔岛的玄武岩海蚀洞`, en: `Buracona · Cape Verde's Blue Eye in Sal`, pt: `Buracona · O Olho Azul de Cabo Verde no Sal` } as T,
-  description: { zh: `Buracona（蓝眼岩洞）完整指南：玄武岩海岸裂隙与海蚀洞的光学秘密、正午蓝光、落日之窗、开放时间 09:00–18:00、交通、真实评价与常见问题。`, en: `The complete guide to Buracona (the Blue Eye) in Sal, Cape Verde: basalt sea caves, the optics of the blue glow, midday light, the sunset window, hours 09:00–18:00, transport, real reviews and FAQ.`, pt: `O guia completo da Buracona (Olho Azul) no Sal, Cabo Verde: grutas em basalto, a ótica do azul, a luz do meio-dia, a janela do sol, horário 09:00–18:00, transporte, avaliações e FAQ.` } as T,
+  title: { zh: `Buracona 蓝眼岩洞 (Palmeira) — 萨尔岛游览指南与位置`, en: `Buracona - Blue Eye Cave (Palmeira) - Visitor Guide & Location`, pt: `Buracona - Blue Eye Cave (Palmeira) - Guia de Visita e Localização` } as T,
+  description: { zh: `Buracona - Blue Eye Cave 完整指南：佛得角萨尔岛 Palmeira 的玄武岩海蚀洞与潮汐蓝池、正午蓝光、落日之窗、开放时间 09:00–18:00、前往 Santa Maria 与 Pedra de Lume 的交通、真实评价与常见问题。`, en: `The complete visitor guide to Buracona - Blue Eye Cave in Palmeira, Sal, Cape Verde: basalt sea caves and tidal blue pools, the midday blue glow, the sunset window, hours 09:00–18:00, transport from Santa Maria and Pedra de Lume, real reviews and FAQ.`, pt: `O guia completo de visita à Buracona - Blue Eye Cave em Palmeira, Sal, Cabo Verde: grutas em basalto e poças de maré azuis, o azul do meio-dia, a janela do sol, horário 09:00–18:00, transporte de Santa Maria e Pedra de Lume, avaliações e FAQ.` } as T,
 };
+
+// ── Location & Map ──
+export const locationMap = {
+  sectionNum: { zh: `位置与地图`, en: `Location`, pt: `Localização` } as T,
+  heading: {
+    zh: `在地图上找到<br/><em class="text-[color:var(--color-emerald)]">Buracona 蓝眼岩洞</em>`,
+    en: `Find<br/><em class="text-[color:var(--color-emerald)]">Buracona - Blue Eye Cave on the Map</em>`,
+    pt: `Encontrar<br/><em class="text-[color:var(--color-emerald)]">Buracona - Blue Eye Cave no Mapa</em>`,
+  } as T,
+  intro: {
+    zh: `Buracona - Blue Eye Cave 位于佛得角萨尔岛西北部的 Palmeira 附近，是一处由玄武岩裂隙形成的海蚀洞与潮汐蓝池。下方地图可帮助您规划路线，建议结合上方「交通指南」一并查看。`,
+    en: `Buracona - Blue Eye Cave sits near Palmeira in the northwest of Sal, Cape Verde — a basalt sea cave and tidal blue pool. The map below helps you plan your route; pair it with the Transport guide above.`,
+    pt: `A Buracona - Blue Eye Cave fica perto de Palmeira, no noroeste do Sal, Cabo Verde — uma gruta marinha em basalto e poça de maré azul. O mapa abaixo ajuda a planear; junte ao guia de Transporte acima.`,
+  } as T,
+  coordsLabel: { zh: `地理坐标`, en: `Coordinates`, pt: `Coordenadas` } as T,
+  plusCodeLabel: { zh: `Plus Code（景点入口）`, en: `Plus Code (entrance)`, pt: `Plus Code (entrada)` } as T,
+  plusCodeEyeLabel: { zh: `Plus Code（蓝眼观景点）`, en: `Plus Code (Blue Eye viewpoint)`, pt: `Plus Code (vista do Olho Azul)` } as T,
+  openInMaps: { zh: `在 Google 地图打开`, en: `Open in Google Maps`, pt: `Abrir no Google Maps` } as T,
+  govLabel: { zh: `官方旅游信息`, en: `Official tourism info`, pt: `Informação turística oficial` } as T,
+  govText: {
+    zh: `了解萨尔岛最新官方旅游资讯与公共节假日，请访问佛得角国家旅游局（Turismo de Cabo Verde）萨尔岛专页。`,
+    en: `For the latest official tourism updates and public-holiday information about Sal, visit the Turismo de Cabo Verde (Cape Verde Tourism) page for Sal.`,
+    pt: `Para as últimas informações oficiais de turismo e feriados do Sal, visite a página de Sal do Turismo de Cabo Verde.`,
+  } as T,
+  govLinkText: { zh: `佛得角国家旅游局 · 萨尔岛专页`, en: `Turismo de Cabo Verde · Sal`, pt: `Turismo de Cabo Verde · Sal` } as T,
+};
+
+// ── Sources (E-E-A-T) ──
+export const sources = {
+  heading: { zh: `资料来源`, en: `Sources`, pt: `Fontes` } as T,
+  intro: {
+    zh: `本页内容由 buracona 独立科普团队依据公开资料整理，仅供参考。出行前请以官方渠道信息为准。`,
+    en: `The content on this page is compiled by the independent buracona editorial team from publicly available sources for reference only. Please rely on official channels before travelling.`,
+    pt: `O conteúdo desta página é compilado pela equipe editorial independente do buracona a partir de fontes públicas, apenas para referência. Consulte canais oficiais antes de viajar.`,
+  } as T,
+  ratingTitle: { zh: `景点评价`, en: `Attraction ratings`, pt: `Avaliações da atração` } as T,
+  ratingNote: {
+    zh: `同步自 Google 地图用户评价，同步时间 2026 年 9 月；版权归原作者与 Google 地图所有。`,
+    en: `Synced from Google Maps user reviews, synced September 2026; copyright belongs to the original authors and Google Maps.`,
+    pt: `Sincronizado a partir das avaliações de utilizadores do Google Maps, sincronizado em setembro de 2026; os direitos de autor pertencem aos autores originais e ao Google Maps.`,
+  } as T,
+  ratingSynced: { zh: `同步时间：2026 年 9 月`, en: `Synced: September 2026`, pt: `Sincronizado: setembro de 2026` } as T,
+  partnersTitle: { zh: `官方旅游伙伴`, en: `Official tourism partners`, pt: `Parceiros oficiais de turismo` } as T,
+  weatherTitle: { zh: `气象与潮汐数据`, en: `Climate & tide data`, pt: `Dados climáticos e de maré` } as T,
+  weatherNote: { zh: `来源：Sunrise-Sunset.org · Open-Meteo`, en: `Source: Sunrise-Sunset.org · Open-Meteo`, pt: `Fonte: Sunrise-Sunset.org · Open-Meteo` } as T,
+};
+
+// ── Weather & sea conditions (live forecast + generated advice) ──
+export const weather = {
+  sectionNum: { zh: `天气与海况`, en: `Weather & Sea`, pt: `Tempo e Mar` } as T,
+  heading: {
+    zh: `出行前先看<br/><em class="text-[color:var(--color-emerald)]">天气与海况</em>`,
+    en: `Check<br/><em class="text-[color:var(--color-emerald)]">Weather & Sea</em>`,
+    pt: `Consulte<br/><em class="text-[color:var(--color-emerald)]">o Tempo e o Mar</em>`,
+  } as T,
+  subtitle: {
+    zh: `实时天气与未来 7 天预报，并依据当日数据自动生成游览建议。`,
+    en: `Live conditions plus a 7-day forecast, with advice generated from today's data.`,
+    pt: `Condições atuais e previsão para 7 dias, com conselhos gerados a partir dos dados de hoje.`,
+  } as T,
+
+  nowLabel: { zh: `当前天气`, en: `Right now`, pt: `Neste momento` } as T,
+  today: { zh: `今天`, en: `Today`, pt: `Hoje` } as T,
+  feelsLike: { zh: `体感`, en: `Feels like`, pt: `Sensação` } as T,
+  humidity: { zh: `湿度`, en: `Humidity`, pt: `Humidade` } as T,
+  windLabel: { zh: `风力`, en: `Wind`, pt: `Vento` } as T,
+  uvLabel: { zh: `紫外线`, en: `UV index`, pt: `UV` } as T,
+  precipLabel: { zh: `降水概率`, en: `Chance of rain`, pt: `Prob. de chuva` } as T,
+  precipShort: { zh: `降水`, en: `Rain`, pt: `Chuva` } as T,
+  updatedAt: { zh: `更新于`, en: `Updated`, pt: `Atualizado` } as T,
+  forecast7: { zh: `未来 7 天`, en: `7-day forecast`, pt: `Previsão de 7 dias` } as T,
+
+  seaTitle: { zh: `海况与下水建议`, en: `Sea conditions & swimming`, pt: `Estado do mar e banhos` } as T,
+  waveLabel: { zh: `浪高`, en: `Wave height`, pt: `Altura das ondas` } as T,
+  seaTempLabel: { zh: `海水温度`, en: `Sea temperature`, pt: `Temp. da água` } as T,
+
+  gRisk: { zh: `风险提醒`, en: `Risk alert`, pt: `Alerta de risco` } as T,
+  gDress: { zh: `出行穿搭`, en: `What to wear`, pt: `O que vestir` } as T,
+  gPlay: { zh: `游玩安排`, en: `Activity plan`, pt: `Programação` } as T,
+  gItems: { zh: `随身物品`, en: `What to bring`, pt: `O que levar` } as T,
+  gSea: { zh: `海边提示`, en: `Sea & coast`, pt: `Mar e costa` } as T,
+
+  source: {
+    zh: `天气数据每小时更新；出行前请以当地气象部门发布的信息为准。`,
+    en: `Weather data refreshes hourly; always check official local advisories before travelling.`,
+    pt: `Os dados são atualizados de hora em hora; consulte sempre os avisos oficiais locais antes de viajar.`,
+  } as T,
+  error: {
+    zh: `天气数据暂时无法加载，请稍后刷新页面重试。`,
+    en: `Weather data is temporarily unavailable — please refresh the page to try again.`,
+    pt: `Os dados meteorológicos estão temporariamente indisponíveis — recarregue a página para tentar de novo.`,
+  } as T,
+
+  // Weather condition names
+  cond: {
+    clear: { zh: `晴`, en: `Clear`, pt: `Limpo` } as T,
+    partly: { zh: `少云`, en: `Partly cloudy`, pt: `Pouco nublado` } as T,
+    cloudy: { zh: `多云`, en: `Cloudy`, pt: `Nublado` } as T,
+    fog: { zh: `有雾`, en: `Fog`, pt: `Nevoeiro` } as T,
+    drizzle: { zh: `小雨`, en: `Light rain`, pt: `Chuva fraca` } as T,
+    rain: { zh: `下雨`, en: `Rain`, pt: `Chuva` } as T,
+    heavy: { zh: `大雨`, en: `Heavy rain`, pt: `Chuva forte` } as T,
+    snow: { zh: `下雪`, en: `Snow`, pt: `Neve` } as T,
+    thunder: { zh: `雷雨`, en: `Thunderstorm`, pt: `Trovoada` } as T,
+  },
+
+  // UV index bands
+  uv: {
+    low: { zh: `弱`, en: `Low`, pt: `Fraco` } as T,
+    moderate: { zh: `中等`, en: `Moderate`, pt: `Moderado` } as T,
+    high: { zh: `强`, en: `High`, pt: `Forte` } as T,
+    veryHigh: { zh: `很强`, en: `Very high`, pt: `Muito forte` } as T,
+    extreme: { zh: `极强`, en: `Extreme`, pt: `Extremo` } as T,
+  },
+
+  // Wind bands (Beaufort based)
+  wind: {
+    calm: { zh: `微风`, en: `Light breeze`, pt: `Brisa leve` } as T,
+    light: { zh: `和风`, en: `Moderate`, pt: `Moderado` } as T,
+    strong: { zh: `风力较大`, en: `Windy`, pt: `Ventoso` } as T,
+    gale: { zh: `大风`, en: `Gale`, pt: `Ventania` } as T,
+  },
+
+  // Advice library — only the entries matching current conditions are rendered
+  adv: {
+    dress_hot: { zh: `气温较高，穿轻薄透气衣物，尽量避开正午时段外出`, en: `Hot day — wear light, breathable clothing and stay out of the midday sun`, pt: `Dia quente — use roupa leve e arejada e evite o sol do meio-dia` } as T,
+    dress_cold: { zh: `气温偏低，注意保暖，建议厚外套与围巾`, en: `Cold day — wrap up well with a thick coat and scarf`, pt: `Dia frio — agasalhe-se bem com casaco grosso e cachecol` } as T,
+    dress_range: { zh: `昼夜温差较大，带一件外套方便随时增减`, en: `Big swing between day and night — bring a layer you can add or remove`, pt: `Grande amplitude térmica — leve uma camada extra para ajustar` } as T,
+    dress_mild: { zh: `气温舒适，昼夜温差小，轻薄透气衣物即可`, en: `Comfortable temperatures, little variation — light, breathable clothing is enough`, pt: `Temperatura confortável, pouca variação — roupa leve e arejada` } as T,
+    dress_rain: { zh: `有降雨可能，建议穿防水外套并备好雨具`, en: `Rain is likely — wear a waterproof jacket and pack rain gear`, pt: `Há probabilidade de chuva — use casaco impermeável e leve proteção` } as T,
+    dress_uv: { zh: `紫外线较强，注意防晒，避免长时间暴晒`, en: `Strong UV — protect your skin and avoid long spells in direct sun`, pt: `UV forte — proteja a pele e evite exposição prolongada ao sol` } as T,
+    dress_wind: { zh: `风力较大，穿贴身衣物，避免宽松长裙与易吹落的帽子`, en: `Windy — wear close-fitting clothing and skip loose dresses or light hats`, pt: `Ventoso — use roupa justa, evite vestidos soltos e chapéus leves` } as T,
+
+    play_clear: { zh: `天气晴好，适合户外游览，也适合看日出日落`, en: `Clear skies — ideal for exploring outdoors and catching sunrise or sunset`, pt: `Céu limpo — ideal para explorar ao ar livre e ver o nascer ou pôr do sol` } as T,
+    play_partly: { zh: `多云间晴，整体适合户外游览`, en: `Partly cloudy — still good for exploring outdoors`, pt: `Pouco nublado — ainda bom para explorar ao ar livre` } as T,
+    play_cloudy: { zh: `阴天光线柔和，很适合拍照，无暴晒适合长时间户外逛游`, en: `Overcast with soft light — great for photos and long walks without harsh sun`, pt: `Nublado, luz suave — ótimo para fotos e passeios longos sem sol forte` } as T,
+    play_hot: { zh: `正午前后气温偏高，缩短连续户外时间，多补水、找阴凉处休息`, en: `Hot around midday — shorten outdoor stretches, drink water and rest in shade`, pt: `Calor por volta do meio-dia — encurte o tempo ao ar livre, beba água e descanse à sombra` } as T,
+    play_rain_prob: { zh: `大概率降雨，优先安排室内项目，海边与登高建议延后`, en: `Rain likely — plan indoor options first and postpone coastal or clifftop trips`, pt: `Chuva provável — priorize opções cobertas e adie passeios costeiros` } as T,
+    play_rain_light: { zh: `有小雨，路面湿滑注意防滑，露天项目体验会打折扣`, en: `Light rain — watch for slippery ground, open-air activities will be less enjoyable`, pt: `Chuva fraca — atenção ao piso escorregadio, atividades ao ar livre ficam prejudicadas` } as T,
+    play_rain_heavy: { zh: `降雨较强，不建议户外游玩，游船与水上项目可能停运`, en: `Heavy rain — outdoor visits not advised, boat trips and water activities may stop`, pt: `Chuva forte — não recomendado ao ar livre, passeios de barco podem ser suspensos` } as T,
+    play_thunder: { zh: `有雷雨，水上项目大概率关闭，请留在室内或安全地带`, en: `Thunderstorms — water activities will likely close, stay indoors or somewhere safe`, pt: `Trovoada — atividades aquáticas devem fechar, fique em local seguro` } as T,
+    play_wind5: { zh: `风力偏大，海边游船与部分露天项目可能停航停运`, en: `Windy — coastal boat trips and some open-air activities may be cancelled`, pt: `Ventoso — passeios de barco e atividades ao ar livre podem ser cancelados` } as T,
+    play_wind7: { zh: `大风天气，户外与海上项目大概率关闭`, en: `Gale conditions — outdoor and sea activities will most likely be closed`, pt: `Ventania — atividades ao ar livre e no mar muito provavelmente encerradas` } as T,
+    play_fog: { zh: `能见度较差，不适合观景看海，航班与船班容易延误`, en: `Poor visibility — bad for viewpoints, and flights or boats may be delayed`, pt: `Pouca visibilidade — mau para miradouros, voos e barcos podem atrasar` } as T,
+
+    item_umbrella: { zh: `雨伞或雨衣`, en: `Umbrella or raincoat`, pt: `Guarda-chuva ou capa de chuva` } as T,
+    item_fold_umbrella: { zh: `折叠伞`, en: `Folding umbrella`, pt: `Guarda-chuva dobrável` } as T,
+    item_raincoat: { zh: `雨衣（风大时不建议长柄伞）`, en: `Raincoat (skip long umbrellas in wind)`, pt: `Capa de chuva (evite guarda-chuva grande com vento)` } as T,
+    item_sunscreen: { zh: `防晒霜`, en: `Sunscreen`, pt: `Protetor solar` } as T,
+    item_sunglasses: { zh: `墨镜`, en: `Sunglasses`, pt: `Óculos de sol` } as T,
+    item_hat: { zh: `遮阳帽`, en: `Sun hat`, pt: `Chapéu de sol` } as T,
+    item_water: { zh: `充足的饮用水`, en: `Plenty of water`, pt: `Água suficiente` } as T,
+    item_jacket: { zh: `一件外套`, en: `An extra layer`, pt: `Uma camada extra` } as T,
+    item_warm_coat: { zh: `厚外套、围巾`, en: `Thick coat and scarf`, pt: `Casaco grosso e cachecol` } as T,
+    item_mask: { zh: `口罩`, en: `Face mask`, pt: `Máscara` } as T,
+    item_wind_hat: { zh: `不易被风吹落的帽子`, en: `A hat that won't blow off`, pt: `Chapéu que não leve o vento` } as T,
+    item_grip_shoes: { zh: `防滑鞋（玄武岩礁石湿滑）`, en: `Non-slip shoes (basalt rocks get slippery)`, pt: `Calçado antiderrapante (rochas de basalto escorregam)` } as T,
+
+    risk_rain_heavy: { zh: `降雨较强，请避开山谷与低洼地带，注意道路积水`, en: `Heavy rain — avoid valleys and low ground, watch for standing water`, pt: `Chuva forte — evite vales e zonas baixas, atenção a água acumulada` } as T,
+    risk_thunder: { zh: `谨防雷电，不要登高、不要在海边戏水或在树下避雨`, en: `Lightning risk — do not climb, swim in the sea or shelter under trees`, pt: `Risco de raios — não suba, não nade no mar nem se abrigue sob árvores` } as T,
+    risk_wind7: { zh: `大风天气，远离广告牌、海边礁石与崖边`, en: `Gale — keep away from signs, coastal rocks and cliff edges`, pt: `Ventania — afaste-se de letreiros, rochas costeiras e bordas de falésias` } as T,
+    risk_fog: { zh: `能见度差，轮渡与航班容易延误，驾车请减速慢行`, en: `Poor visibility — ferries and flights may be delayed, drive slowly`, pt: `Pouca visibilidade — ferries e voos podem atrasar, conduza devagar` } as T,
+    risk_wave: { zh: `涌浪较大，请勿下水，远离礁石与岸边浪涌区`, en: `Large swell — do not enter the water, stay back from rocks and surf`, pt: `Ondulação forte — não entre na água, afaste-se das rochas e da rebentação` } as T,
+
+    sea_calm: { zh: `海况平稳，适合观景与在指定区域浮潜`, en: `Calm seas — good for sightseeing and snorkelling in designated areas`, pt: `Mar calmo — bom para apreciar a vista e fazer snorkel em áreas designadas` } as T,
+    sea_moderate: { zh: `涌浪中等，只在指定区域下水并听从向导安排`, en: `Moderate swell — only swim in designated areas and follow your guide`, pt: `Ondulação moderada — entre na água só em áreas designadas e siga o guia` } as T,
+    sea_rough: { zh: `涌浪较大，不建议下水，注意岸边浪涌与湿滑礁石`, en: `Rough seas — swimming not advised, beware of surf and slippery rocks`, pt: `Mar agitado — não é recomendado nadar, cuidado com a rebentação e rochas` } as T,
+    sea_warm: { zh: `海水温度适宜，可以舒适下水`, en: `Sea temperature is comfortable for swimming`, pt: `Temperatura da água confortável para nadar` } as T,
+    sea_cool: { zh: `海水偏凉，长时间下水建议穿保暖泳衣`, en: `Sea is cool — consider a thermal suit for longer swims`, pt: `Água mais fria — considere fato térmico para mergulhos longos` } as T,
+  },
+};
+
