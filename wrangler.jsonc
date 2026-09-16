@@ -1,0 +1,7 @@
+{
+  "name": "buracona-blue-eye-cave",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "./dist"
+  }
+}

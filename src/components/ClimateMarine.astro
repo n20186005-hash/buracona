@@ -1,0 +1,65 @@
+---
+import type { Lang } from '../i18n/utils';
+import { climateMarine } from '../i18n/translations';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const _ = (s: any) => (typeof s === 'string' ? s : s[lang] || s.pt || '');
+---
+
+<section id="climate-season" class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">
+        08 — {_(climateMarine.sectionNum)}
+      </div>
+      <h2 class="font-display text-4xl md:text-6xl mt-4" set:html={_(climateMarine.heading)} />
+      <p class="mt-6 text-[color:var(--color-moss)]/80">{_(climateMarine.subtitle)}</p>
+    </div>
+
+    <div class="mt-12 max-w-5xl mx-auto rounded-3xl bg-white border border-black/5 p-8 md:p-10">
+      <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">
+        {_(climateMarine.synthesisTitle)}
+      </div>
+      <p class="mt-4 text-[color:var(--color-moss)]/85 leading-relaxed">{_(climateMarine.synthesis)}</p>
+    </div>
+
+    <div class="mt-12">
+      <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">
+        {_(climateMarine.tableTitle)}
+      </div>
+      <div class="mt-5 overflow-x-auto">
+        <table class="w-full border-collapse min-w-[680px]">
+          <thead>
+            <tr class="text-left text-xs uppercase tracking-wider text-[color:var(--color-moss)]/60">
+              <th class="p-3 font-medium">{_(climateMarine.colPeriod)}</th>
+              <th class="p-3 font-medium">{_(climateMarine.colWeather)}</th>
+              <th class="p-3 font-medium">{_(climateMarine.colSea)}</th>
+              <th class="p-3 font-medium">{_(climateMarine.colPlan)}</th>
+              <th class="p-3 font-medium">{_(climateMarine.colWild)}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              climateMarine.rows.map((r) => (
+                <tr class="border-t border-black/5 align-top">
+                  <td class="p-3">
+                    <div class="font-medium text-[color:var(--color-ink)]">{_(r.period)}</div>
+                    <div class="text-xs text-[color:var(--color-moss)]/60 mt-1">{_(r.meta)}</div>
+                  </td>
+                  <td class="p-3 text-sm text-[color:var(--color-moss)]/80">{_(r.weather)}</td>
+                  <td class="p-3 text-sm text-[color:var(--color-moss)]/80">{_(r.sea)}</td>
+                  <td class="p-3 text-sm text-[color:var(--color-emerald)]/90">{_(r.plan)}</td>
+                  <td class="p-3 text-sm text-[color:var(--color-moss)]/80">{_(r.wild)}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-6 text-xs text-[color:var(--color-moss)]/50">{_(climateMarine.basis)}</p>
+    </div>
+  </div>
+</section>

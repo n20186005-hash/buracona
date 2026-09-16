@@ -6,6 +6,10 @@ dist/
 # dependencies
 node_modules/
 
+# cloudflare / wrangler
+.wrangler/
+.dev.vars
+
 # logs
 *.log
 npm-debug.log*
@@ -15,8 +19,8 @@ pnpm-debug.log*
 
 # environment variables
 .env
-.env.production
-.env.local
+.env.*
+!.env.example
 
 # macOS
 .DS_Store
@@ -25,3 +29,7 @@ pnpm-debug.log*
 .idea/
 .vscode/
 *.swp
+
+# misc
+*.tsbuildinfo
+coverage/

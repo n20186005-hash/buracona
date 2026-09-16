@@ -29,7 +29,7 @@ const initialHtml = renderWeatherHtml(data, labels, LOCALE);
 const labelsJson = JSON.stringify(labels).replace(/</g, '\\u003c');
 ---
 <section id="weather" class="max-w-7xl mx-auto px-6 py-24 md:py-32">
-  <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">04 — {_(weather.sectionNum)}</div>
+  <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">06 — {_(weather.sectionNum)}</div>
   <h2 class="font-display text-4xl md:text-6xl mt-4 mb-8" set:html={_(weather.heading)} />
   <p class="max-w-2xl text-[color:var(--color-moss)]/80 mb-12">{_(weather.subtitle)}</p>
   <div id="weather-root" data-lat={SITE.latitude} data-lng={SITE.longitude} data-locale={LOCALE} set:html={initialHtml} />
