@@ -9,7 +9,7 @@ const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid md:grid-cols-12 gap-12 items-start">
       <div class="md:col-span-4">
-        <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">05 — {_(transport.sectionNum)}</div>
+        <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">06 — {_(transport.sectionNum)}</div>
         <h2 class="font-display text-4xl md:text-5xl mt-4 leading-tight" set:html={_(transport.heading)} />
         <p class="mt-6 text-[color:var(--color-moss)]/80">{_(transport.subtitle)}</p>
       </div>

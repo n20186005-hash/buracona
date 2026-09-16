@@ -1,0 +1,63 @@
+---
+import type { Lang } from '../i18n/utils';
+import { tide } from '../i18n/translations';
+import { SITE } from '../data/site';
+import { getTide } from '../data/tide';
+import { renderTideHtml } from '../data/tideView';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const _ = (s: any) => typeof s === 'string' ? s : (s[lang] || s.pt || '');
+
+// Resolve a whole group of translation keys for the current language.
+const mapT = (o: Record<string, any>) =>
+  Object.fromEntries(Object.entries(o).map(([k, v]) => [k, _(v)]));
+
+const LOCALE = lang === 'zh' ? 'zh-CN' : lang === 'pt' || lang === 'cri' ? 'pt-PT' : 'en-US';
+
+const labels = {
+  ...mapT(tide),
+  moon: mapT(tide.moon),
+  strength: mapT(tide.strength),
+  adv: mapT(tide.adv),
+};
+
+// Fetched server-side (cached + de-duplicated); the client refreshes it live.
+const data = await getTide(SITE.latitude, SITE.longitude);
+const initialHtml = renderTideHtml(data, labels, LOCALE);
+const labelsJson = JSON.stringify(labels).replace(/</g, '\\u003c');
+---
+<section id="tides" class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="text-xs uppercase tracking-[0.25em] text-[color:var(--color-emerald)]">05 — {_(tide.sectionNum)}</div>
+      <h2 class="font-display text-4xl md:text-6xl mt-4" set:html={_(tide.heading)} />
+      <p class="mt-6 text-[color:var(--color-moss)]/80">{_(tide.subtitle)}</p>
+    </div>
+    <div class="mt-14" id="tide-root" data-lat={SITE.latitude} data-lng={SITE.longitude} data-locale={LOCALE} set:html={initialHtml} />
+  </div>
+</section>
+
+<script type="application/json" id="tide-i18n" set:html={labelsJson} />
+
+<script>
+  import { getTide } from '../data/tide';
+  import { renderTideHtml } from '../data/tideView';
+
+  const root = document.getElementById('tide-root');
+  if (root) {
+    const lat = parseFloat(root.dataset.lat || '0');
+    const lng = parseFloat(root.dataset.lng || '0');
+    const locale = root.dataset.locale || 'en-US';
+    let labels: Record<string, any> = {};
+    try {
+      labels = JSON.parse(document.getElementById('tide-i18n')?.textContent || '{}');
+    } catch (_e) {
+      labels = {};
+    }
+    // Refresh with live values once the page is interactive.
+    getTide(lat, lng).then((d) => {
+      if (d && root.isConnected) root.innerHTML = renderTideHtml(d, labels, locale);
+    });
+  }
+</script>

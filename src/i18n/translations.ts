@@ -165,8 +165,9 @@ export const transport = {
   heading: { zh: `如何抵达<br/><em class="text-[color:var(--color-emerald)]">Palmeira 的 Buracona 蓝眼岩洞</em>`, en: `Location & How to Visit<br/><em class="text-[color:var(--color-emerald)]">Buracona (Blue Eye) in Palmeira</em>`, pt: `Como Chegar & Visitar<br/><em class="text-[color:var(--color-emerald)]">Buracona (Olho Azul) em Palmeira</em>` } as T,
   subtitle: { zh: `Buracona 位于萨尔岛西北角的荒原，距主镇 Santa Maria 约 30 公里，无公交直达，建议租车、包车或参加一日游。`, en: `Buracona sits in the wild northwest of Sal, about 30 km from the main town Santa Maria. There is no direct bus — rent a car, hire a taxi, or join a day tour.`, pt: `A Buracona fica no sertão noroeste do Sal, a cerca de 30 km da vila de Santa Maria. Não há autocarro direto — alugue carro, táxi ou junte-se a um passeio.` } as T,
   items: [
-    { icon: '🚕', title: { zh: `从 Santa Maria 包车 / 出租车`, en: `From Santa Maria by taxi`, pt: `De Santa Maria de táxi` } as T, meta: '~30 km · 45–50 min', details: [{ icon: '🚖', text: { zh: `<strong>出租车 / Aluguer</strong> · 岛上的共享出租车（aluguer）或包车从 Santa Maria 出发，沿 EN1 向北再转西抵达 Buracona。最后一段常为非铺装土路（off-road），颠簸且需慢行，整体约 45–50 分钟。`, en: `<strong>Taxi / Aluguer</strong> · Shared aluguers or a private taxi from Santa Maria go north on the EN1 and then west to Buracona. The last stretch is often unpaved (off-road), so the full ride is typically 45–50 min.`, pt: `<strong>Táxi / Aluguer</strong> · Aluguers partilhados ou táxi privado de Santa Maria seguem norte pela EN1 e depois oeste até a Buracona. O último trecho é muitas vezes de terra (off-road), por isso o total costuma ser 45–50 min.` } as T }, { icon: '🗺️', text: { zh: `<strong>一日游</strong> · 多数旅行社提供"蓝眼岩洞 + 盐湖 Pedra de Lume + 沙丘"环岛线路，含门票与向导。`, en: `<strong>Day tour</strong> · Most agencies run an island loop "Blue Eye + Pedra de Lume salt lake + dunes" with entry and guide included.`, pt: `<strong>Passeio</strong> · A maioria das agências faz o circuito "Olho Azul + salinas de Pedra de Lume + dunas" com entrada e guia.` } as T }] },
-    { icon: '✈️', title: { zh: `从 Espargos 机场`, en: `From Espargos airport`, pt: `Do aeroporto de Espargos` } as T, meta: '~20 km · 25 min', details: [{ icon: '🚐', text: { zh: `<strong>接机 + 顺路</strong> · 从 Amílcar Cabral 机场出发约 20 公里，多数游客会将其安排在环岛游的其中一站。`, en: `<strong>Transfer + stop</strong> · About 20 km from Amílcar Cabral airport; most visitors slot it into an island tour.`, pt: `<strong>Transfer + paragem</strong> · Cerca de 20 km do aeroporto Amílcar Cabral; a maioria inclui no passeio da ilha.` } as T }, { icon: '🚗', text: { zh: `<strong>自驾</strong> · 沿 EN1 北上至 Palmeira 岔路，按路标向西进入土路，最后一段为非铺装路面，建议四驱或谨慎驾驶。`, en: `<strong>Self-drive</strong> · North on the EN1 to the Palmeira turn-off, then west on signposted tracks; the final stretch is unpaved — 4x4 or careful driving advised.`, pt: `<strong>Carro próprio</strong> · Norte pela EN1 até o desvio de Palmeira, depois oeste por caminhos sinalizados; o último trecho é de terra — 4x4 ou condução cuidadosa.` } as T }] },
+    { icon: '🚕', title: { zh: `从 Santa Maria 包车 / 出租车`, en: `From Santa Maria by taxi`, pt: `De Santa Maria de táxi` } as T, meta: '~30 km · 45–50 min', details: [{ icon: '🚖', text: { zh: `<strong>出租车 / Aluguer</strong> · 岛上的共享出租车（aluguer）或包车从 Santa Maria 出发，沿 EN1 向北再转西抵达 Buracona。最后一段常为非铺装土路（off-road），颠簸且需慢行，整体约 45–50 分钟。`, en: `<strong>Taxi / Aluguer</strong> · Shared aluguers or a private taxi from Santa Maria go north on the EN1 and then west to Buracona. The last stretch is often unpaved (off-road), so the full ride is typically 45–50 min.`, pt: `<strong>Táxi / Aluguer</strong> · Aluguers partilhados ou táxi privado de Santa Maria seguem norte pela EN1 e depois oeste até a Buracona. O último trecho é muitas vezes de terra (off-road), por isso o total costuma ser 45–50 min.` } as T }, { icon: '🗺️', text: { zh: `<strong>一日游</strong> · 多数旅行社提供"蓝眼岩洞 + 盐湖 Pedra de Lume + 沙丘"环岛线路，含门票与向导，适合不想自驾的游客。`, en: `<strong>Day tour</strong> · Most agencies run an island loop "Blue Eye + Pedra de Lume salt lake + dunes" with entry and guide included — ideal if you'd rather not self-drive.`, pt: `<strong>Passeio</strong> · A maioria das agências faz o circuito "Olho Azul + salinas de Pedra de Lume + dunas" com entrada e guia — ideal se preferir não conduzir.` } as T }] },
+    { icon: '✈️', title: { zh: `从 Espargos 机场`, en: `From Espargos airport`, pt: `Do aeroporto de Espargos` } as T, meta: '~20 km · 25 min', details: [{ icon: '🚗', text: { zh: `<strong>租车自驾</strong> · 机场设有多家租车柜台，取车后沿 EN1 北上至 Palmeira 岔路，按路标向西进入土路；建议取满油、预留约 25 分钟。最后一段为非铺装路面，建议谨慎驾驶。`, en: `<strong>Rental car</strong> · Several rental desks at the airport; from there north on the EN1 to the Palmeira turn-off, then west on signposted tracks. Allow ~25 min and leave with a full tank; the final stretch is unpaved — drive carefully.`, pt: `<strong>Carro de aluguer</strong> · Vários balcões no aeroporto; norte pela EN1 até o desvio de Palmeira, depois oeste por caminhos sinalizados. Conte ~25 min e saia com o depósito cheio; o último trecho é de terra — condução cuidadosa.` } as T }, { icon: '🚐', text: { zh: `<strong>接机 + 顺路</strong> · 多数游客把 Buracona 安排在环岛游或接机行程中的一站，从 Amílcar Cabral 机场出发约 20 公里。`, en: `<strong>Transfer + stop</strong> · Many visitors slot Buracona into an island tour or airport transfer; about 20 km from Amílcar Cabral airport.`, pt: `<strong>Transfer + paragem</strong> · Muitos incluem a Buracona num passeio da ilha ou transfer; cerca de 20 km do aeroporto Amílcar Cabral.` } as T }] },
+    { icon: '🚌', title: { zh: `公共交通 / 拼车（Aluguer）`, en: `Public transit / shared ride`, pt: `Transporte público / partilha` } as T, meta: '无固定班次', details: [{ text: { zh: `<strong>无固定公交</strong> · 萨尔岛没有直达 Buracona 的公交线路。可先乘共享出租车（aluguer）从 Santa Maria 到 Palmeira，再在当地拼车或包车进入；但班次不稳、末段土路仍需接驳，自由行不推荐，建议以包车或一日游为主。`, en: `<strong>No direct bus</strong> · There is no public bus to Buracona. You can take a shared aluguer from Santa Maria to Palmeira, then find a local ride in, but services are irregular and the final track still needs a transfer — not ideal for independent travel. A private taxi or day tour is the safer bet.`, pt: `<strong>Sem autocarro direto</strong> · Não há transporte público direto para a Buracona. Pode ir de aluguer de Santa Maria a Palmeira e depois encontrar transporte local, mas os horários são irregulares e o último troço precisa de ligação — pouco recomendável sozinho. Táxi privado ou passeio são melhores.` } as T }] },
     { icon: '🚲', title: { zh: `骑行或徒步`, en: `On foot / by bike`, pt: `A pé ou de bike` } as T, meta: 'Remoto · 无遮荫', details: [{ icon: '', text: { zh: `<strong>不建议</strong> · Buracona 地处偏僻、无遮荫、补给极少，单独骑行或徒步风险较高；如坚持，请清晨出发并带足饮水。`, en: `<strong>Not advised</strong> · Buracona is remote, shadeless and poorly supplied; cycling or hiking alone is risky. If you must, start at dawn with plenty of water.`, pt: `<strong>Não recomendado</strong> · A Buracona é remota, sem sombra e com pouco apoio; ir de bike ou a pé sozinho é arriscado. Se insistir, parta de madrugada com água.` } as T }] },
   ],
 };
@@ -292,7 +293,7 @@ export const climate = {
   timelineBest: { zh: `推荐窗口：11:00–13:00`, en: `Best window: 11:00–13:00`, pt: `Melhor janela: 11:00–13:00` } as T,
   loading: { zh: `正在获取实时数据…`, en: `Loading live data…`, pt: `Carregando dados…` } as T,
   error: { zh: `实时数据暂时不可用，请参考上方游览指南。`, en: `Live data unavailable — see the guide above.`, pt: `Dados indisponíveis — veja o guia acima.` } as T,
-  source: { zh: `数据来源：Sunrise-Sunset.org · Open-Meteo`, en: `Source: Sunrise-Sunset.org · Open-Meteo`, pt: `Fonte: Sunrise-Sunset.org · Open-Meteo` } as T,
+  source: { zh: `数据来源：公开天文与海洋观测服务`, en: `Source: public astronomy & marine services`, pt: `Fonte: serviços públicos de astronomia e mar` } as T,
 };
 
 // ── Gallery ──
@@ -922,6 +923,94 @@ export const weather = {
     sea_rough: { zh: `涌浪较大，不建议下水，注意岸边浪涌与湿滑礁石`, en: `Rough seas — swimming not advised, beware of surf and slippery rocks`, pt: `Mar agitado — não é recomendado nadar, cuidado com a rebentação e rochas` } as T,
     sea_warm: { zh: `海水温度适宜，可以舒适下水`, en: `Sea temperature is comfortable for swimming`, pt: `Temperatura da água confortável para nadar` } as T,
     sea_cool: { zh: `海水偏凉，长时间下水建议穿保暖泳衣`, en: `Sea is cool — consider a thermal suit for longer swims`, pt: `Água mais fria — considere fato térmico para mergulhos longos` } as T,
+  },
+};
+
+// ── Tide table (hourly sea level + moon phase, generated advice) ──
+export const tide = {
+  sectionNum: { zh: `潮汐时刻`, en: `Tides`, pt: `Marés` } as T,
+  heading: {
+    zh: `什么时候来？<br/><em class="text-[color:var(--color-emerald)]">看潮汐表</em>`,
+    en: `When to come?<br/><em class="text-[color:var(--color-emerald)]">Check the tides</em>`,
+    pt: `Quando vir?<br/><em class="text-[color:var(--color-emerald)]">Consulte as marés</em>`,
+  } as T,
+  subtitle: {
+    zh: `潮水涨退决定礁石平台何时露出、天然泳池何时蓄满水。以下为实时潮汐数据，帮您挑对时段。`,
+    en: `The tide decides when the lava platforms appear and when the natural pool fills. Live tide data to help you pick the right hour.`,
+    pt: `A maré decide quando as plataformas de lava aparecem e quando a piscina natural enche. Dados de maré ao vivo para escolher a melhor hora.`,
+  } as T,
+
+  nowLabel: { zh: `当前潮位`, en: `Tide now`, pt: `Maré agora` } as T,
+  rising: { zh: `涨潮中`, en: `Rising`, pt: `A subir` } as T,
+  falling: { zh: `退潮中`, en: `Falling`, pt: `A baixar` } as T,
+  nextHigh: { zh: `下次高潮`, en: `Next high`, pt: `Próx. preia-mar` } as T,
+  nextLow: { zh: `下次低潮`, en: `Next low`, pt: `Próx. baixa-mar` } as T,
+  updatedAt: { zh: `更新于`, en: `Updated`, pt: `Atualizado` } as T,
+
+  rangeLabel: { zh: `今日潮差`, en: `Today's range`, pt: `Amplitude hoje` } as T,
+  moonLabel: { zh: `月相`, en: `Moon`, pt: `Lua` } as T,
+  strengthLabel: { zh: `潮汐强度`, en: `Tide strength`, pt: `Intensidade` } as T,
+  dayMin: { zh: `今日最低`, en: `Today's low`, pt: `Mínimo hoje` } as T,
+  dayMax: { zh: `今日最高`, en: `Today's high`, pt: `Máximo hoje` } as T,
+
+  curveLabel: { zh: `24 小时潮位曲线`, en: `24-hour tide curve`, pt: `Curva da maré em 24 h` } as T,
+  todayLabel: { zh: `今日潮时`, en: `Today's tides`, pt: `Marés de hoje` } as T,
+  daysAhead: { zh: `未来 6 天潮汐时刻`, en: `Next 6 days`, pt: `Próximos 6 dias` } as T,
+  high: { zh: `高潮`, en: `High tide`, pt: `Preia-mar` } as T,
+  low: { zh: `低潮`, en: `Low tide`, pt: `Baixa-mar` } as T,
+
+  gBest: { zh: `最佳时段`, en: `Best window`, pt: `Melhor altura` } as T,
+  gExplore: { zh: `此刻玩法`, en: `What to do now`, pt: `O que fazer agora` } as T,
+  gSafety: { zh: `安全提醒`, en: `Safety`, pt: `Segurança` } as T,
+
+  source: {
+    zh: `潮汐时刻每小时更新，实际水深受风向与涌浪影响，请以现场情况为准。`,
+    en: `Tide times refresh hourly; actual water levels also depend on wind and swell — always judge the conditions on site.`,
+    pt: `As marés são atualizadas de hora em hora; o nível real também depende do vento e da ondulação — avalie sempre no local.`,
+  } as T,
+  error: {
+    zh: `潮汐数据暂时无法加载，请稍后刷新页面重试。`,
+    en: `Tide data is temporarily unavailable — please refresh the page to try again.`,
+    pt: `Os dados de maré estão temporariamente indisponíveis — recarregue a página para tentar de novo.`,
+  } as T,
+
+  // Moon phase names
+  moon: {
+    new: { zh: `新月`, en: `New moon`, pt: `Lua nova` } as T,
+    waxingCrescent: { zh: `蛾眉月`, en: `Waxing crescent`, pt: `Lua crescente` } as T,
+    first: { zh: `上弦月`, en: `First quarter`, pt: `Quarto crescente` } as T,
+    waxingGibbous: { zh: `盈凸月`, en: `Waxing gibbous`, pt: `Gibosa crescente` } as T,
+    full: { zh: `满月`, en: `Full moon`, pt: `Lua cheia` } as T,
+    waningGibbous: { zh: `亏凸月`, en: `Waning gibbous`, pt: `Gibosa minguante` } as T,
+    last: { zh: `下弦月`, en: `Last quarter`, pt: `Quarto minguante` } as T,
+    waningCrescent: { zh: `残月`, en: `Waning crescent`, pt: `Lua minguante` } as T,
+  },
+
+  // Spring / neap / in-between
+  strength: {
+    spring: { zh: `大潮`, en: `Spring tide`, pt: `Maré viva` } as T,
+    neap: { zh: `小潮`, en: `Neap tide`, pt: `Maré morta` } as T,
+    mid: { zh: `中潮`, en: `Average`, pt: `Intermédia` } as T,
+  },
+
+  // Advice library — only the entries matching current conditions are rendered
+  adv: {
+    best_low_soon: { zh: `低潮临近，是走下礁石平台、看潮池的最佳窗口（约 2 小时内）`, en: `Low tide is close — the best window to walk out on the lava platform and see the tide pools (within ~2 hours)`, pt: `A baixa-mar está perto — a melhor altura para descer à plataforma de lava e ver os poços de maré (cerca de 2 horas)` } as T,
+    best_high_soon: { zh: `高潮临近，天然泳池水位最高，适合下水与浮潜`, en: `High tide is close — the natural pool is at its fullest, good for swimming and snorkelling`, pt: `A preia-mar está perto — a piscina natural está no máximo, boa para nadar e fazer snorkel` } as T,
+    best_after_low: { zh: `刚过低潮，水位正在回升，先看岸线地貌再下水`, en: `Just past low tide and the water is coming back — explore the shoreline first, then swim`, pt: `Passou a baixa-mar e a água está a subir — explore a costa primeiro, depois nade` } as T,
+    best_after_high: { zh: `刚过高潮，水位开始回落，礁石区正逐渐露出`, en: `Just past high tide and the water is dropping — the rock platforms are starting to appear`, pt: `Passou a preia-mar e a água está a descer — as plataformas rochosas começam a aparecer` } as T,
+    best_general: { zh: `建议结合潮时安排行程，避开正午强光时段`, en: `Plan around the tide table and avoid the harsh midday light`, pt: `Planeie em função das marés e evite a luz forte do meio-dia` } as T,
+
+    explore_low: { zh: `潮位偏低，礁石间的潮池露出，适合观察海葵、小鱼与熔岩纹理`, en: `Water is low — the pools between the rocks are exposed, good for spotting anemones, small fish and lava textures`, pt: `Maré baixa — os poços entre as rochas estão à vista, bons para ver anémonas, peixes pequenos e texturas de lava` } as T,
+    explore_mid: { zh: `潮位适中，既能在岩池戏水，也能沿岸线行走拍照`, en: `Water is mid-range — you can paddle the rock pools and still walk the shoreline for photos`, pt: `Maré intermédia — pode molhar-se nos poços e ainda caminhar pela costa a tirar fotos` } as T,
+    explore_high: { zh: `潮位较高，天然泳池水量充足，是下水与浮潜的好时机`, en: `Water is high — the natural pool is full, a good moment for a swim or a snorkel`, pt: `Maré alta — a piscina natural está cheia, boa altura para nadar ou fazer snorkel` } as T,
+    explore_spring: { zh: `正值大潮，潮差最大，潮池与礁石露出最多`, en: `Spring tides — the biggest range of the month, so the most pools and rock are exposed`, pt: `Maré viva — a maior amplitude do mês, logo mais poços e rochas à vista` } as T,
+    explore_neap: { zh: `正值小潮，潮差较小，水位变化平缓，适合长时间停留`, en: `Neap tides — a small range and gentle change, comfortable for a long stay`, pt: `Maré morta — amplitude pequena e variação suave, confortável para ficar mais tempo` } as T,
+
+    safety_rising: { zh: `涨潮期间礁石间的通道会被潮水切断，请留意返回时间`, en: `On a rising tide the channels between the rocks get cut off — keep an eye on the time to get back`, pt: `Com a maré a subir, as passagens entre as rochas ficam cortadas — vigie a hora de regressar` } as T,
+    safety_cut: { zh: `高潮临近，低洼岩台即将被淹没，请尽快返回高处`, en: `High tide is near and the low ledges are about to be covered — head back to higher ground now`, pt: `A preia-mar está perto e as plataformas baixas vão ficar cobertas — regresse a terreno mais alto` } as T,
+    safety_rocks: { zh: `退潮露出的礁石湿滑且附着青苔，请穿防滑鞋、结伴同行`, en: `Rocks uncovered by the ebb are slippery and algae-covered — wear non-slip shoes and don't go alone`, pt: `As rochas descobertas pela baixa-mar são escorregadias e com algas — use calçado antiderrapante e não vá sozinho` } as T,
+    safety_spring: { zh: `大潮期涨退更快更急，切勿在礁石上逗留过久`, en: `On spring tides the water moves faster — don't linger out on the rocks`, pt: `Nas marés vivas a água sobe e desce mais depressa — não demore nas rochas` } as T,
   },
 };
 
